@@ -19,6 +19,7 @@ For each assertion string `s`:
 | Substrings matching `**pi-mono/**` + path segments | Full path (trailing punctuation stripped) | Mentions **packages/coding-agent/docs/rpc.md** with the usual repo prefix (see real evals) |
 | Whole line `U+NNNN` (hex)                          | Same token                                | `U+2028`                                                                                   |
 | Whole line digits, length ≤ 3                      | Same digits                               | `4`                                                                                        |
+| Whole line exact token in allowlist                | Same token                                | `matchesKey`, `render(width)`, `--vllm`, `no documented include directive`                |
 | Contains `read tool` (case-insensitive)            | `read tool`                               | `Mentions read tool`                                                                       |
 | Contains `packages/ai` and no `pi-mono`            | `packages/ai`                             | Second assertion on provider checklist                                                     |
 | Contains `agent-session.ts` and no `pi-mono`       | `agent-session.ts`                        | RPC eval pointing at TS file                                                               |
@@ -31,7 +32,7 @@ Order is deterministic: first occurrence of each needle wins (Set dedupes).
 If a new eval needs a mandatory substring that is **not** a monorepo path (e.g. a function name or protocol keyword):
 
 1. Prefer putting it as its **own** assertion line in `**all-evals.json`** so reviewers see it.
-2. Extend `**machineFromAssertions**` in `**scripts/grade-needles.mjs**` with a **narrow** condition (avoid broad substrings that false-positive in other evals).
+2. Extend `**machineFromAssertions**` in `**scripts/grade-needles.mjs**` with a **narrow** condition (avoid broad substrings that false-positive in other evals). Prefer an **exact whole-line token allowlist** for literals like `matchesKey`, `showOverlay`, `--vllm`, or `no documented include directive`.
 3. Run `**npm run scaffold-graded-example -- --id <id> --force`** or manually align `**assertions.json**`, then `**npm run ci**`.
 
 ## Path extraction everywhere

@@ -17,16 +17,21 @@
       "expected_output": "Cites Component interface with render(width), matchesKey for input.",
       "files": [],
       "assertions": [
-        "Mentions pi-mono/packages/tui/README.md"
+        "Mentions pi-mono/packages/tui/README.md",
+        "Component interface",
+        "render(width)",
+        "matchesKey"
       ]
     },
     {
       "id": "tui-overlay-003",
       "prompt": "How do I show a modal overlay dialog in pi-tui, and what options control its positioning?",
-      "expected_output": "Cites showOverlay from tui README.",
+      "expected_output": "Cites showOverlay from tui README and at least one positioning option such as anchor, row/col, or margin.",
       "files": [],
       "assertions": [
-        "Mentions pi-mono/packages/tui/README.md"
+        "Mentions pi-mono/packages/tui/README.md",
+        "showOverlay",
+        "anchor"
       ]
     }
   ]

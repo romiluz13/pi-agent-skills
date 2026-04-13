@@ -9,14 +9,14 @@
 	{"query": "pi rpc images base64 ImageContent format", "should_trigger": true},
 	{"query": "strict split records newline only accept optional cr strip", "should_trigger": true},
 	{"query": "non-node integrator must spawn pi rpc subprocess framing", "should_trigger": true},
-	{"query": "grpc protobuf golang tutorial", "should_trigger": false},
+	{"query": "node child_process stdio framing for a custom repl protocol", "should_trigger": false},
 	{"query": "websocket json rpc browser client reconnect", "should_trigger": false},
 	{"query": "graphql subscription apollo client", "should_trigger": false},
 	{"query": "apache thrift binary protocol", "should_trigger": false},
 	{"query": "zeromq request reply pattern", "should_trigger": false},
 	{"query": "redis streams consumer group", "should_trigger": false},
 	{"query": "kafka producer idempotent config", "should_trigger": false},
-	{"query": "mqtt qos levels explained", "should_trigger": false},
+	{"query": "parse openai responses api sse stream events in typescript", "should_trigger": false},
 	{"query": "amqp rabbitmq exchange routing key", "should_trigger": false},
 	{"query": "nats jetstream consumer", "should_trigger": false}
 ]

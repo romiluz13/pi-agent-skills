@@ -15,7 +15,7 @@
     {
       "id": "mom-sandbox-002",
       "prompt": "Should I run Mom in Docker or host mode, and what are the security tradeoffs?",
-      "expected_output": "Cites sandbox.md: Docker is default and safer; host mode risks.",
+      "expected_output": "Cites sandbox.md: host mode is the default, Docker mode is the recommended isolated option, and explains the security tradeoffs.",
       "files": [],
       "assertions": [
         "Mentions pi-mono/packages/mom/docs/sandbox.md"
@@ -24,10 +24,13 @@
     {
       "id": "mom-events-003",
       "prompt": "How do I schedule a periodic task for Mom to run every morning in a specific channel?",
-      "expected_output": "Cites events.md: periodic event JSON in data/events/.",
+      "expected_output": "Cites events.md: periodic event JSON in `/workspace/events/`, equivalent to host `data/events/` when the data dir is mounted into the sandbox.",
       "files": [],
       "assertions": [
-        "Mentions pi-mono/packages/mom/docs/events.md"
+        "Mentions pi-mono/packages/mom/docs/events.md",
+        "periodic",
+        "schedule",
+        "timezone"
       ]
     }
   ]

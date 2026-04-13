@@ -1,3 +1,5 @@
 [
-  "pi-mono/packages/tui/README.md"
+  "pi-mono/packages/tui/README.md",
+  "showOverlay",
+  "anchor"
 ]

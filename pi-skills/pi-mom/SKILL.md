@@ -20,6 +20,7 @@ compatibility: Node.js/Docker host environment; read pi-mono/packages/mom/README
 
 - **Dual-File History**: `log.jsonl` is the source of truth (append-only); `context.jsonl` is the compacted view sent to the LLM.
 - **Workspace Isolation**: Mom runs on the host by default (no isolation). Docker mode (`--sandbox=docker:<name>`) is recommended for security — it isolates tool execution to a container where only the `data/` directory is mounted to `/workspace`.
+- **Event Paths**: On the host, event files live in `data/events/`. Inside the Docker sandbox and `events.md`, that same mounted directory is referred to as `/workspace/events/` or `workspace/events/`.
 - **Event Limits**: A maximum of 5 events can be queued per channel. Events use unique filenames to avoid overwrites.
 - **Artifacts Server**: Runs Express on port 8080 with Cloudflare Tunnel for public URLs; file watching is recursive via chokidar; WebSocket live reload via `?ws=true` parameter — `pi-mono/packages/mom/docs/artifacts-server.md`.
 - **Multi-Platform Design**: Design doc defines `PlatformAdapter` interface (`start`, `stop`, `getChannels`, `sendMessage`, etc.), planned adapters (Slack, Discord, CLI), `MomCustomTool` interface for host-side tool execution via `invoke_tool`, and bubblewrap per-channel isolation — `pi-mono/packages/mom/docs/new.md`.
@@ -28,7 +29,7 @@ compatibility: Node.js/Docker host environment; read pi-mono/packages/mom/README
 ## Workflows
 
 - **Create Skill**: Add a `SKILL.md` file and scripts to `/workspace/skills/` (global) or `/workspace/<channel>/skills/` (channel-specific).
-- **Schedule Task**: Write a JSON event file to `data/events/` (type: immediate, one-shot, or periodic).
+- **Schedule Task**: Write a JSON event file to `data/events/` on the host (mounted as `/workspace/events/` inside Docker) using `immediate`, `one-shot`, or `periodic` event JSON.
 - **Compaction**: When context exceeds limits, older messages are summarized into a compaction event.
 - **Serve artifacts**: Read `docs/artifacts-server.md` for Express+Tunnel setup and `start-server.sh` bootstrap.
 - **Custom host-side tools**: Read `docs/new.md` MomCustomTool section for factory pattern, ToolAPI, and tool discovery paths.

@@ -1,3 +1,6 @@
 [
-  "pi-mono/packages/tui/README.md"
+  "pi-mono/packages/tui/README.md",
+  "Component interface",
+  "render(width)",
+  "matchesKey"
 ]

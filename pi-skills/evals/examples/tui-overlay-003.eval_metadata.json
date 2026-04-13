@@ -4,6 +4,8 @@
   "skill_name": "pi-tui",
   "prompt": "How do I show a modal overlay dialog in pi-tui, and what options control its positioning?",
   "assertions": [
-    "Mentions pi-mono/packages/tui/README.md"
+    "Mentions pi-mono/packages/tui/README.md",
+    "showOverlay",
+    "anchor"
   ]
 }

@@ -5,10 +5,20 @@
       "text": "pi-mono/packages/pods/README.md",
       "passed": true,
       "evidence": "Found substring in response"
+    },
+    {
+      "text": "--vllm",
+      "passed": true,
+      "evidence": "Found substring in response"
+    },
+    {
+      "text": "tensor-parallel-size",
+      "passed": true,
+      "evidence": "Found substring in response"
     }
   ],
   "summary": {
-    "passed": 1,
-    "total": 1
+    "passed": 3,
+    "total": 3
   }
 }

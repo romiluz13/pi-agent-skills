@@ -22,11 +22,12 @@
     },
     {
       "id": "cust-prompt-003",
-      "prompt": "Where are prompt templates loaded from and how does the variable syntax and include directive work?",
-      "expected_output": "Cites prompt-templates.md: locations, frontmatter, /name invocation.",
+      "prompt": "Where are prompt templates loaded from, what argument syntax do they use, and is there a documented include directive?",
+      "expected_output": "Cites prompt-templates.md: locations, frontmatter, /name invocation, positional args, and that there is no documented include directive.",
       "files": [],
       "assertions": [
-        "Mentions pi-mono/packages/coding-agent/docs/prompt-templates.md"
+        "Mentions pi-mono/packages/coding-agent/docs/prompt-templates.md",
+        "no documented include directive"
       ]
     }
   ]

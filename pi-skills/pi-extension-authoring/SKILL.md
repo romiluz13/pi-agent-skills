@@ -1,6 +1,6 @@
 ---
 name: pi-extension-authoring
-description: Authoring Pi TypeScript extensions — ExtensionAPI, custom tools, commands, UI hooks, resources_discover, and how extendResources merges skill paths after base reload. Use when the user builds or debugs pi extensions, registers tools, adds /commands, hooks events, or ships extension examples. Use for "how do I extend pi", "extension API", "registerTool", even if pi-mono is not mentioned.
+description: Authoring Pi TypeScript extensions — ExtensionAPI, custom tools, commands, UI hooks, resources_discover, `registerProvider()`, and how extendResources merges skill paths after base reload. Use when the user builds or debugs pi extensions, registers tools, adds /commands, hooks events, integrates TUI components, or ships extension examples. Use for "how do I extend pi", "extension API", "registerTool", "registerProvider", even if pi-mono is not mentioned.
 compatibility: TypeScript/Node extension host; read pi-mono/packages/coding-agent for ExtensionAPI and loader behavior cited in this skill.
 ---
 
@@ -15,6 +15,7 @@ Ground every answer in `pi-mono/` files below.
 3. `pi-mono/packages/coding-agent/src/core/resource-loader.ts` — `extendResources()` appends paths via `mergePaths` after existing `lastSkillPaths` (late paths lose name collisions to earlier ones unless names differ).
 4. `pi-mono/packages/coding-agent/src/core/agent-session.ts` — extension commands vs queued prompts; skill expansion hooks.
 5. `pi-mono/packages/coding-agent/docs/tui.md` — extension TUI component integration with `@mariozechner/pi-tui`: `Component` rendering contract, overlay patterns, input handling in extension context.
+6. `pi-mono/packages/coding-agent/docs/custom-provider.md` — `registerProvider()` for proxies, OAuth/SSO, custom APIs, and custom model definitions.
 
 ## Invariants
 

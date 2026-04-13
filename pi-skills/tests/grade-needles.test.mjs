@@ -34,3 +34,24 @@ test("agent-session.ts without pi-mono in same assertion line", () => {
 	const got = machineFromAssertions(["agent-session.ts"]);
 	assert.deepEqual(got, ["agent-session.ts"]);
 });
+
+test("extracts exact non-path tokens for strengthened graded needles", () => {
+	const got = machineFromAssertions([
+		"Mentions pi-mono/packages/tui/README.md",
+		"Component interface",
+		"render(width)",
+		"matchesKey",
+		"--vllm",
+		"tensor-parallel-size",
+		"no documented include directive",
+	]);
+	assert.deepEqual(got, [
+		"pi-mono/packages/tui/README.md",
+		"Component interface",
+		"render(width)",
+		"matchesKey",
+		"--vllm",
+		"tensor-parallel-size",
+		"no documented include directive",
+	]);
+});

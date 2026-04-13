@@ -17,7 +17,10 @@
       "expected_output": "Cites pods README: pi start with hermes parser for Qwen.",
       "files": [],
       "assertions": [
-        "Mentions pi-mono/packages/pods/README.md"
+        "Mentions pi-mono/packages/pods/README.md",
+        "pi start",
+        "hermes",
+        "qwen3_coder"
       ]
     },
     {
@@ -26,7 +29,9 @@
       "expected_output": "Cites pods README: --vllm flag passes raw args.",
       "files": [],
       "assertions": [
-        "Mentions pi-mono/packages/pods/README.md"
+        "Mentions pi-mono/packages/pods/README.md",
+        "--vllm",
+        "tensor-parallel-size"
       ]
     }
   ]

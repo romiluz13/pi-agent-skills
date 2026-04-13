@@ -1,3 +1,5 @@
 [
-  "pi-mono/packages/pods/README.md"
+  "pi-mono/packages/pods/README.md",
+  "--vllm",
+  "tensor-parallel-size"
 ]

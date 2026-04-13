@@ -5,10 +5,15 @@
       "text": "pi-mono/packages/coding-agent/docs/prompt-templates.md",
       "passed": true,
       "evidence": "Found substring in response"
+    },
+    {
+      "text": "no documented include directive",
+      "passed": true,
+      "evidence": "Found substring in response"
     }
   ],
   "summary": {
-    "passed": 1,
-    "total": 1
+    "passed": 2,
+    "total": 2
   }
 }

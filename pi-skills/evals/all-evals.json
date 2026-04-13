@@ -231,14 +231,14 @@
 				"prompt": "How do I create a custom component in pi-tui that respects width constraints and handles keyboard input? Point me to the interface and the key detection utility.",
 				"expected_output": "Cites Component interface with render(width), matchesKey for input.",
 				"files": [],
-				"assertions": ["Mentions pi-mono/packages/tui/README.md"]
+				"assertions": ["Mentions pi-mono/packages/tui/README.md", "Component interface", "render(width)", "matchesKey"]
 			},
 			{
 				"id": "tui-overlay-003",
 				"prompt": "How do I show a modal overlay dialog in pi-tui, and what options control its positioning?",
-				"expected_output": "Cites showOverlay from tui README.",
+				"expected_output": "Cites showOverlay from tui README and at least one positioning option such as anchor, row/col, or margin.",
 				"files": [],
-				"assertions": ["Mentions pi-mono/packages/tui/README.md"]
+				"assertions": ["Mentions pi-mono/packages/tui/README.md", "showOverlay", "anchor"]
 			}
 		]
 		},
@@ -255,16 +255,16 @@
 			{
 				"id": "mom-sandbox-002",
 				"prompt": "Should I run Mom in Docker or host mode, and what are the security tradeoffs?",
-				"expected_output": "Cites sandbox.md: Docker is default and safer; host mode risks.",
+				"expected_output": "Cites sandbox.md: host mode is the default, Docker mode is the recommended isolated option, and explains the security tradeoffs.",
 				"files": [],
 				"assertions": ["Mentions pi-mono/packages/mom/docs/sandbox.md"]
 			},
 			{
 				"id": "mom-events-003",
 				"prompt": "How do I schedule a periodic task for Mom to run every morning in a specific channel?",
-				"expected_output": "Cites events.md: periodic event JSON in data/events/.",
+				"expected_output": "Cites events.md: periodic event JSON in `/workspace/events/`, equivalent to host `data/events/` when the data dir is mounted into the sandbox.",
 				"files": [],
-				"assertions": ["Mentions pi-mono/packages/mom/docs/events.md"]
+				"assertions": ["Mentions pi-mono/packages/mom/docs/events.md", "periodic", "schedule", "timezone"]
 			}
 		]
 		},
@@ -283,14 +283,14 @@
 				"prompt": "How do I start a Qwen model on a multi-GPU pod and what tool-call parser does pi use for it?",
 				"expected_output": "Cites pods README: pi start with hermes parser for Qwen.",
 				"files": [],
-				"assertions": ["Mentions pi-mono/packages/pods/README.md"]
+				"assertions": ["Mentions pi-mono/packages/pods/README.md", "pi start", "hermes", "qwen3_coder"]
 			},
 			{
 				"id": "pods-custom-003",
 				"prompt": "How do I pass custom vLLM arguments like tensor-parallel-size when the predefined model CLI shortcuts aren't enough?",
 				"expected_output": "Cites pods README: --vllm flag passes raw args.",
 				"files": [],
-				"assertions": ["Mentions pi-mono/packages/pods/README.md"]
+				"assertions": ["Mentions pi-mono/packages/pods/README.md", "--vllm", "tensor-parallel-size"]
 			}
 		]
 		},
@@ -313,10 +313,10 @@
 			},
 			{
 				"id": "cust-prompt-003",
-				"prompt": "Where are prompt templates loaded from and how does the variable syntax and include directive work?",
-				"expected_output": "Cites prompt-templates.md: locations, frontmatter, /name invocation.",
+				"prompt": "Where are prompt templates loaded from, what argument syntax do they use, and is there a documented include directive?",
+				"expected_output": "Cites prompt-templates.md: locations, frontmatter, /name invocation, positional args, and that there is no documented include directive.",
 				"files": [],
-				"assertions": ["Mentions pi-mono/packages/coding-agent/docs/prompt-templates.md"]
+				"assertions": ["Mentions pi-mono/packages/coding-agent/docs/prompt-templates.md", "no documented include directive"]
 			}
 		]
 		}

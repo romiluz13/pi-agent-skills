@@ -9,11 +9,10 @@ compatibility: stdio JSONL client or TypeScript SDK embedding; read pi-mono/pack
 ## Grounding
 
 1. `pi-mono/packages/coding-agent/docs/rpc.md` — **Framing** section (LF-only record delimiter; `readline` incompatibility with U+2028/U+2029).
-2. `pi-mono/packages/coding-agent/docs/sdk.md` — programmatic session patterns.
+2. `pi-mono/packages/coding-agent/docs/sdk.md` — programmatic session patterns plus `createAgentSession`, `AgentSession`, `createAgentSessionRuntime`, `ModelRegistry.create()`, `AuthStorage.create()`, and `SessionManager.inMemory()`.
 3. `pi-mono/packages/coding-agent/docs/json.md` — `--mode json` event stream: session header, `agent_*`/`turn_*`/`message_*`/`tool_execution_*` events, `jq` filtering examples.
 4. `pi-mono/packages/coding-agent/src/modes/rpc/rpc-client.ts` — reference TypeScript client mentioned from `rpc.md` intro when applicable.
 5. `pi-mono/packages/coding-agent/src/core/agent-session.ts` — API surface for in-process embedding (per `rpc.md` note to TypeScript users).
-6. `pi-mono/packages/coding-agent/docs/sdk.md` — `createAgentSession` factory, `AgentSession` interface, `createAgentSessionRuntime` for advanced multi-session runtime, `ModelRegistry.create()`, `AuthStorage.create()`, `SessionManager.inMemory()`.
 
 ## Invariants
 

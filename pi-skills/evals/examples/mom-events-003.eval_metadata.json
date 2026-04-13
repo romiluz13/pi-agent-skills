@@ -4,6 +4,9 @@
   "skill_name": "pi-mom",
   "prompt": "How do I schedule a periodic task for Mom to run every morning in a specific channel?",
   "assertions": [
-    "Mentions pi-mono/packages/mom/docs/events.md"
+    "Mentions pi-mono/packages/mom/docs/events.md",
+    "periodic",
+    "schedule",
+    "timezone"
   ]
 }

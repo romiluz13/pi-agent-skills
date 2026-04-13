@@ -1,3 +1,6 @@
 [
-  "pi-mono/packages/mom/docs/events.md"
+  "pi-mono/packages/mom/docs/events.md",
+  "periodic",
+  "schedule",
+  "timezone"
 ]

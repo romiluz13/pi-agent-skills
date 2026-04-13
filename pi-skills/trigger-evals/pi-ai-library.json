@@ -17,6 +17,6 @@
 	{"query": "ollama modelfile syntax", "should_trigger": false},
 	{"query": "litellm proxy config yaml", "should_trigger": false},
 	{"query": "vercel ai sdk streamtext", "should_trigger": false},
-	{"query": "aws sdk v3 dynamodb document client", "should_trigger": false},
-	{"query": "stripe webhook signature verify node", "should_trigger": false}
+	{"query": "langgraph state graph tool routing typescript", "should_trigger": false},
+	{"query": "llamaindex typescript agent tool calling", "should_trigger": false}
 ]

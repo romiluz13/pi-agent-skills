@@ -4,6 +4,9 @@
   "skill_name": "pi-pods",
   "prompt": "How do I start a Qwen model on a multi-GPU pod and what tool-call parser does pi use for it?",
   "assertions": [
-    "Mentions pi-mono/packages/pods/README.md"
+    "Mentions pi-mono/packages/pods/README.md",
+    "pi start",
+    "hermes",
+    "qwen3_coder"
   ]
 }

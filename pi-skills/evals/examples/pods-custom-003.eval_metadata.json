@@ -4,6 +4,8 @@
   "skill_name": "pi-pods",
   "prompt": "How do I pass custom vLLM arguments like tensor-parallel-size when the predefined model CLI shortcuts aren't enough?",
   "assertions": [
-    "Mentions pi-mono/packages/pods/README.md"
+    "Mentions pi-mono/packages/pods/README.md",
+    "--vllm",
+    "tensor-parallel-size"
   ]
 }

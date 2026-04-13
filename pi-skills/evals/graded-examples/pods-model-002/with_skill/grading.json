@@ -5,10 +5,25 @@
       "text": "pi-mono/packages/pods/README.md",
       "passed": true,
       "evidence": "Found substring in response"
+    },
+    {
+      "text": "pi start",
+      "passed": true,
+      "evidence": "Found substring in response"
+    },
+    {
+      "text": "hermes",
+      "passed": true,
+      "evidence": "Found substring in response"
+    },
+    {
+      "text": "qwen3_coder",
+      "passed": true,
+      "evidence": "Found substring in response"
     }
   ],
   "summary": {
-    "passed": 1,
-    "total": 1
+    "passed": 4,
+    "total": 4
   }
 }

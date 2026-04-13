@@ -1,3 +1,6 @@
 [
-  "pi-mono/packages/pods/README.md"
+  "pi-mono/packages/pods/README.md",
+  "pi start",
+  "hermes",
+  "qwen3_coder"
 ]

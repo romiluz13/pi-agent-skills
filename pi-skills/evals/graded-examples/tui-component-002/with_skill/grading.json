@@ -5,10 +5,25 @@
       "text": "pi-mono/packages/tui/README.md",
       "passed": true,
       "evidence": "Found substring in response"
+    },
+    {
+      "text": "Component interface",
+      "passed": true,
+      "evidence": "Found substring in response"
+    },
+    {
+      "text": "render(width)",
+      "passed": true,
+      "evidence": "Found substring in response"
+    },
+    {
+      "text": "matchesKey",
+      "passed": true,
+      "evidence": "Found substring in response"
     }
   ],
   "summary": {
-    "passed": 1,
-    "total": 1
+    "passed": 4,
+    "total": 4
   }
 }

@@ -5,10 +5,25 @@
       "text": "pi-mono/packages/mom/docs/events.md",
       "passed": true,
       "evidence": "Found substring in response"
+    },
+    {
+      "text": "periodic",
+      "passed": true,
+      "evidence": "Found substring in response"
+    },
+    {
+      "text": "schedule",
+      "passed": true,
+      "evidence": "Found substring in response"
+    },
+    {
+      "text": "timezone",
+      "passed": true,
+      "evidence": "Found substring in response"
     }
   ],
   "summary": {
-    "passed": 1,
-    "total": 1
+    "passed": 4,
+    "total": 4
   }
 }
