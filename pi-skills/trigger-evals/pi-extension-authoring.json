@@ -1,0 +1,22 @@
+[
+	{"query": "my pi extension extendResources adds skillPaths at runtime will it override user skills same name", "should_trigger": true},
+	{"query": "ExtensionAPI registerTool example matching pi-mono docs extensions.md", "should_trigger": true},
+	{"query": "how to add a custom /command in pi extension and intercept input event", "should_trigger": true},
+	{"query": "dynamic-resources example in coding-agent examples extensions folder", "should_trigger": true},
+	{"query": "extension conflicts tools same name load order diagnostics", "should_trigger": true},
+	{"query": "pi.registerCommand handler signature where documented", "should_trigger": true},
+	{"query": "replace default editor in extension ui hook", "should_trigger": true},
+	{"query": "resources_discover return skills prompts themes paths", "should_trigger": true},
+	{"query": "typescript module default export function pi ExtensionAPI doom example", "should_trigger": true},
+	{"query": "emitError extension runner event skill_expansion parity", "should_trigger": true},
+	{"query": "next.js app router server actions best practices", "should_trigger": false},
+	{"query": "excel formula for weighted average", "should_trigger": false},
+	{"query": "git rebase interactive tutorial", "should_trigger": false},
+	{"query": "how to use pandas read_csv", "should_trigger": false},
+	{"query": "docker compose healthcheck syntax", "should_trigger": false},
+	{"query": "leetcode two sum python", "should_trigger": false},
+	{"query": "figma auto layout tips", "should_trigger": false},
+	{"query": "swiftui list performance", "should_trigger": false},
+	{"query": "mongodb aggregation $lookup example", "should_trigger": false},
+	{"query": "nginx reverse proxy websocket", "should_trigger": false}
+]

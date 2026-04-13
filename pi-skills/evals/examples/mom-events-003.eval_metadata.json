@@ -1,0 +1,9 @@
+{
+  "eval_id": "mom-events-003",
+  "eval_name": "mom_events_003",
+  "skill_name": "pi-mom",
+  "prompt": "How do I schedule a periodic task for Mom to run every morning in a specific channel?",
+  "assertions": [
+    "Mentions pi-mono/packages/mom/docs/events.md"
+  ]
+}

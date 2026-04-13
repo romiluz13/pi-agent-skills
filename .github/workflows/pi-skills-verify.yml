@@ -1,0 +1,49 @@
+name: pi-skills verify
+
+on:
+  push:
+    paths:
+      - "pi-skills/**"
+      - "skills/**"
+      - "docs/**"
+      - "README.md"
+      - "AGENTS.md"
+      - "CONTRIBUTING.md"
+      - "LICENSE"
+      - ".pi-mono-rev"
+      - ".github/workflows/pi-skills-verify.yml"
+  pull_request:
+    paths:
+      - "pi-skills/**"
+      - "skills/**"
+      - "docs/**"
+      - "README.md"
+      - "AGENTS.md"
+      - "CONTRIBUTING.md"
+      - "LICENSE"
+      - ".pi-mono-rev"
+      - ".github/workflows/pi-skills-verify.yml"
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Clone pi-mono at .pi-mono-rev
+        run: |
+          REV=$(tr -d ' \n\r' < .pi-mono-rev)
+          git clone --filter=blob:none --no-checkout https://github.com/badlogic/pi-mono.git pi-mono
+          git -C pi-mono fetch --depth 1 origin "$REV"
+          git -C pi-mono checkout FETCH_HEAD
+
+      - name: npm run ci (regrade baselines + all gates)
+        run: cd pi-skills && npm run ci
+
+      - name: evals packs are in sync (sync-evals is a no-op)
+        run: |
+          cd pi-skills
+          cp -r evals /tmp/evals-before
+          npm run sync-evals
+          diff -ru /tmp/evals-before/packs evals/packs
+          diff /tmp/evals-before/evals.json evals/evals.json

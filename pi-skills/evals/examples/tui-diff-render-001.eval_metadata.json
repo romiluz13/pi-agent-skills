@@ -1,0 +1,10 @@
+{
+  "eval_id": "tui-diff-render-001",
+  "eval_name": "tui_diff_render_001",
+  "skill_name": "pi-tui",
+  "prompt": "How does the Pi TUI update the terminal screen without flickering? Reference the specific sequence or CSI code used.",
+  "assertions": [
+    "Mentions CSI 2026",
+    "Mentions pi-mono/packages/tui/README.md"
+  ]
+}

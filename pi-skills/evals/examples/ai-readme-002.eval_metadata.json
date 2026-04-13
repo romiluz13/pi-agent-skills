@@ -1,0 +1,7 @@
+{
+	"eval_id": "ai-readme-002",
+	"eval_name": "pi-ai-readme-canonical-api-overview",
+	"skill_name": "pi-ai-library",
+	"prompt": "Where is the canonical public API overview for stream/complete, Context, and Tool definitions in pi-mono?",
+	"assertions": ["Mentions pi-mono/packages/ai/README.md"]
+}

@@ -1,0 +1,53 @@
+{
+  "skill_name": "pi-cli-workspace",
+  "evals": [
+    {
+      "id": "cli-precedence-001",
+      "prompt": "I have the same skill name in ~/.pi/agent/skills/foo and in my repo's .pi/skills/foo. Which file wins when pi loads skills, and where is that decided in pi-mono? List the exact source files and the merge order (CLI vs project vs package).",
+      "expected_output": "Answer cites resourcePrecedenceRank in package-manager.ts, mergePaths/load order in resource-loader.ts, first-name-wins in skills.ts; no invented behavior.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/src/core/package-manager.ts",
+        "Mentions pi-mono/packages/coding-agent/src/core/resource-loader.ts",
+        "Mentions pi-mono/packages/coding-agent/src/core/skills.ts"
+      ]
+    },
+    {
+      "id": "cli-read-gate-002",
+      "prompt": "Why would <available_skills> not appear in my system prompt when running pi with a custom tool set? Point to the exact condition in pi-mono source.",
+      "expected_output": "Cites buildSystemPrompt hasRead gate in system-prompt.ts.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/src/core/system-prompt.ts",
+        "Mentions read tool"
+      ]
+    },
+    {
+      "id": "cli-skill-expand-003",
+      "prompt": "What happens when I send /skill:my-skill extra args in the pi editor? Which function expands it and where is the skill body read from disk?",
+      "expected_output": "Cites _expandSkillCommand and readFileSync in agent-session.ts with path to file.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/src/core/agent-session.ts"
+      ]
+    },
+    {
+      "id": "cli-compaction-004",
+      "prompt": "When does pi auto-compact, how does it choose where to cut, and can I tune it via settings?",
+      "expected_output": "Cites compaction.md: reserveTokens triggers, keepRecentTokens budget, cut-point avoids splitting tool results.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/docs/compaction.md"
+      ]
+    },
+    {
+      "id": "cli-models-005",
+      "prompt": "How do I add a local Ollama model to pi so it appears in /model, and what compat flags might I need?",
+      "expected_output": "Cites models.md: minimal models.json entry with baseUrl, compat flags for non-standard servers.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/docs/models.md"
+      ]
+    }
+  ]
+}

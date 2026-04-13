@@ -1,0 +1,1 @@
+The canonical overview for **`stream` / `complete`**, **`Context`**, and **tool** definitions in pi-ai is **`pi-mono/packages/ai/README.md`** (TOC sections cover Quick Start, Tools, streaming, context serialization, and related APIs).

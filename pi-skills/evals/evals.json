@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "corpus_note": "Assertions grade outputs for pi-mono path citations and protocol quotes. Checked-in baselines: evals/graded-examples/<eval_id>/. Live runs: pi-skills-workspace/iteration-N/<eval_id>/.",
+  "packs": [
+    {
+      "skill_name": "pi-cli-workspace",
+      "file": "packs/pi-cli-workspace.json"
+    },
+    {
+      "skill_name": "pi-extension-authoring",
+      "file": "packs/pi-extension-authoring.json"
+    },
+    {
+      "skill_name": "pi-package-authoring",
+      "file": "packs/pi-package-authoring.json"
+    },
+    {
+      "skill_name": "pi-ai-library",
+      "file": "packs/pi-ai-library.json"
+    },
+    {
+      "skill_name": "pi-agent-embedding",
+      "file": "packs/pi-agent-embedding.json"
+    },
+    {
+      "skill_name": "pi-web-ui",
+      "file": "packs/pi-web-ui.json"
+    },
+    {
+      "skill_name": "pi-rpc-sdk",
+      "file": "packs/pi-rpc-sdk.json"
+    },
+    {
+      "skill_name": "pi-tui",
+      "file": "packs/pi-tui.json"
+    },
+    {
+      "skill_name": "pi-mom",
+      "file": "packs/pi-mom.json"
+    },
+    {
+      "skill_name": "pi-pods",
+      "file": "packs/pi-pods.json"
+    },
+    {
+      "skill_name": "pi-customization",
+      "file": "packs/pi-customization.json"
+    }
+  ]
+}

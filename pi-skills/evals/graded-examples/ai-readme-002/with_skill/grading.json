@@ -1,0 +1,14 @@
+{
+  "generated_by": "pi-skills/scripts/grade-assertions.mjs",
+  "expectations": [
+    {
+      "text": "pi-mono/packages/ai/README.md",
+      "passed": true,
+      "evidence": "Found substring in response"
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "total": 1
+  }
+}

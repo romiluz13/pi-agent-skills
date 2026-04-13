@@ -1,0 +1,10 @@
+{
+  "eval_id": "pods-setup-001",
+  "eval_name": "pods_setup_001",
+  "skill_name": "pi-pods",
+  "prompt": "How do I configure pi pods with a DataCrunch NFS volume?",
+  "assertions": [
+    "Mentions --mount",
+    "Mentions pi-mono/packages/pods/README.md"
+  ]
+}

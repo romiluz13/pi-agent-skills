@@ -1,0 +1,1 @@
+Start from **`pi-mono/packages/coding-agent/docs/extensions.md`** for first-party extension authoring. For concrete samples and an index of extension examples on disk, use **`pi-mono/packages/coding-agent/examples/extensions/`** (subfolders under that path).

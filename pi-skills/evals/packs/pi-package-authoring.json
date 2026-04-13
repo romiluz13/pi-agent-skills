@@ -1,0 +1,33 @@
+{
+  "skill_name": "pi-package-authoring",
+  "evals": [
+    {
+      "id": "pkg-precedence-001",
+      "prompt": "In pi package resolution, what numeric rank does origin package get in resourcePrecedenceRank, and what does lower rank mean for sort order?",
+      "expected_output": "package returns 4; lower rank sorts earlier in resolved lists — cite package-manager.ts comment block.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/src/core/package-manager.ts",
+        "4"
+      ]
+    },
+    {
+      "id": "pkg-docs-002",
+      "prompt": "Which pi-mono markdown file documents pi install / pi list / package.json pi manifest for Pi packages?",
+      "expected_output": "pi-mono/packages/coding-agent/docs/packages.md (and cross-ref README Pi Packages).",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/docs/packages.md"
+      ]
+    },
+    {
+      "id": "pkg-readme-003",
+      "prompt": "Where does the end-user-facing Pi Packages section (pi install examples) live in pi-mono?",
+      "expected_output": "packages/coding-agent/README.md Pi Packages section.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/README.md"
+      ]
+    }
+  ]
+}

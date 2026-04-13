@@ -1,0 +1,9 @@
+{
+  "eval_id": "cli-models-005",
+  "eval_name": "cli_models_005",
+  "skill_name": "pi-cli-workspace",
+  "prompt": "How do I add a local Ollama model to pi so it appears in /model, and what compat flags might I need?",
+  "assertions": [
+    "Mentions pi-mono/packages/coding-agent/docs/models.md"
+  ]
+}

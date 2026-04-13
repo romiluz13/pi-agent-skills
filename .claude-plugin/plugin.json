@@ -1,0 +1,13 @@
+{
+  "name": "pi-skill",
+  "description": "Code-grounded Agent Skills for building with Pi (pi-mono). Covers all 7 packages: pi coding agent (workspace, extensions, packages, RPC/SDK, customization), pi-ai (multi-provider LLM API), pi-agent-core (agent runtime), pi-tui (terminal UI), pi-web-ui (web components), pi-mom (Slack bot), and pi-pods (vLLM GPU deployments). Skills are grounded in the pi-mono source corpus and cite real file paths.",
+  "version": "1.0.0",
+  "author": {
+    "name": "rom.iluz"
+  },
+  "homepage": "https://github.com/romiluz13/pi-agent-skills",
+  "repository": "https://github.com/romiluz13/pi-agent-skills",
+  "license": "MIT",
+  "keywords": ["pi", "pi-mono", "agent", "coding-agent", "llm", "tui", "vllm", "skills"],
+  "skills": "./pi-skills/"
+}

@@ -1,0 +1,9 @@
+{
+  "eval_id": "rpc-json-mode-003",
+  "eval_name": "rpc_json_mode_003",
+  "skill_name": "pi-rpc-sdk",
+  "prompt": "What events does pi --mode json emit and how does it differ from --mode rpc? Show a jq example.",
+  "assertions": [
+    "Mentions pi-mono/packages/coding-agent/docs/json.md"
+  ]
+}

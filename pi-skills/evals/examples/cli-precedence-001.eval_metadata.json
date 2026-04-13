@@ -1,0 +1,11 @@
+{
+	"eval_id": "cli-precedence-001",
+	"eval_name": "skill-name-collision-and-merge-order",
+	"skill_name": "pi-cli-workspace",
+	"prompt": "I have the same skill name in ~/.pi/agent/skills/foo and in my repo's .pi/skills/foo. Which file wins when pi loads skills, and where is that decided in pi-mono? List the exact source files and the merge order (CLI vs project vs package).",
+	"assertions": [
+		"Mentions pi-mono/packages/coding-agent/src/core/package-manager.ts",
+		"Mentions pi-mono/packages/coding-agent/src/core/resource-loader.ts",
+		"Mentions pi-mono/packages/coding-agent/src/core/skills.ts"
+	]
+}

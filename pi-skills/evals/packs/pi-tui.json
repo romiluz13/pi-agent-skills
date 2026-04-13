@@ -1,0 +1,33 @@
+{
+  "skill_name": "pi-tui",
+  "evals": [
+    {
+      "id": "tui-diff-render-001",
+      "prompt": "How does the Pi TUI update the terminal screen without flickering? Reference the specific sequence or CSI code used.",
+      "expected_output": "Mentions differential rendering and CSI 2026 synchronized output.",
+      "files": [],
+      "assertions": [
+        "Mentions CSI 2026",
+        "Mentions pi-mono/packages/tui/README.md"
+      ]
+    },
+    {
+      "id": "tui-component-002",
+      "prompt": "How do I create a custom component in pi-tui that respects width constraints and handles keyboard input? Point me to the interface and the key detection utility.",
+      "expected_output": "Cites Component interface with render(width), matchesKey for input.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/tui/README.md"
+      ]
+    },
+    {
+      "id": "tui-overlay-003",
+      "prompt": "How do I show a modal overlay dialog in pi-tui, and what options control its positioning?",
+      "expected_output": "Cites showOverlay from tui README.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/tui/README.md"
+      ]
+    }
+  ]
+}

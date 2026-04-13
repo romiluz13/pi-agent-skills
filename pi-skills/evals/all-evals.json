@@ -1,0 +1,324 @@
+{
+	"pack_version": 1,
+	"corpus_note": "Assertions grade outputs for pi-mono path citations and protocol quotes. Checked-in baselines: evals/graded-examples/<eval_id>/. Live runs: pi-skills-workspace/iteration-N/<eval_id>/.",
+	"skill_evals": [
+		{
+			"skill_name": "pi-cli-workspace",
+			"evals": [
+				{
+					"id": "cli-precedence-001",
+					"prompt": "I have the same skill name in ~/.pi/agent/skills/foo and in my repo's .pi/skills/foo. Which file wins when pi loads skills, and where is that decided in pi-mono? List the exact source files and the merge order (CLI vs project vs package).",
+					"expected_output": "Answer cites resourcePrecedenceRank in package-manager.ts, mergePaths/load order in resource-loader.ts, first-name-wins in skills.ts; no invented behavior.",
+					"files": [],
+					"assertions": [
+						"Mentions pi-mono/packages/coding-agent/src/core/package-manager.ts",
+						"Mentions pi-mono/packages/coding-agent/src/core/resource-loader.ts",
+						"Mentions pi-mono/packages/coding-agent/src/core/skills.ts"
+					]
+				},
+				{
+					"id": "cli-read-gate-002",
+					"prompt": "Why would <available_skills> not appear in my system prompt when running pi with a custom tool set? Point to the exact condition in pi-mono source.",
+					"expected_output": "Cites buildSystemPrompt hasRead gate in system-prompt.ts.",
+					"files": [],
+					"assertions": ["Mentions pi-mono/packages/coding-agent/src/core/system-prompt.ts", "Mentions read tool"]
+				},
+			{
+				"id": "cli-skill-expand-003",
+				"prompt": "What happens when I send /skill:my-skill extra args in the pi editor? Which function expands it and where is the skill body read from disk?",
+				"expected_output": "Cites _expandSkillCommand and readFileSync in agent-session.ts with path to file.",
+				"files": [],
+				"assertions": ["Mentions pi-mono/packages/coding-agent/src/core/agent-session.ts"]
+			},
+			{
+				"id": "cli-compaction-004",
+				"prompt": "When does pi auto-compact, how does it choose where to cut, and can I tune it via settings?",
+				"expected_output": "Cites compaction.md: reserveTokens triggers, keepRecentTokens budget, cut-point avoids splitting tool results.",
+				"files": [],
+				"assertions": ["Mentions pi-mono/packages/coding-agent/docs/compaction.md"]
+			},
+			{
+				"id": "cli-models-005",
+				"prompt": "How do I add a local Ollama model to pi so it appears in /model, and what compat flags might I need?",
+				"expected_output": "Cites models.md: minimal models.json entry with baseUrl, compat flags for non-standard servers.",
+				"files": [],
+				"assertions": ["Mentions pi-mono/packages/coding-agent/docs/models.md"]
+			}
+		]
+		},
+		{
+			"skill_name": "pi-extension-authoring",
+			"evals": [
+				{
+					"id": "ext-resources-001",
+					"prompt": "My extension calls extendResources with extra skillPaths. If a skill name collides with one already loaded earlier in reload(), which wins? Quote the merge/ordering logic from pi-mono.",
+					"expected_output": "extendResources appends paths; mergePaths preserves first resolved path; loadSkills first name wins — cite resource-loader.ts and skills.ts.",
+					"files": [],
+					"assertions": [
+						"Mentions extendResources or mergePaths in pi-mono/packages/coding-agent/src/core/resource-loader.ts"
+					]
+				},
+				{
+					"id": "ext-docs-entry-002",
+					"prompt": "Where is the primary first-party documentation for authoring Pi extensions, and where is the examples index on disk in pi-mono?",
+					"expected_output": "Points to pi-mono/packages/coding-agent/docs/extensions.md and examples path under packages/coding-agent/examples/extensions/.",
+					"files": [],
+					"assertions": [
+						"Mentions pi-mono/packages/coding-agent/docs/extensions.md",
+						"Mentions pi-mono/packages/coding-agent/examples/extensions/"
+					]
+				},
+				{
+					"id": "ext-conflict-003",
+					"prompt": "When two loaded extensions register conflicting tools or commands, what does pi-mono coding-agent do — drop one extension or keep both and report diagnostics?",
+					"expected_output": "Cites detectExtensionConflicts / errors pushed to extensionsResult in resource-loader reload path; keep all loaded, surface diagnostics.",
+					"files": [],
+					"assertions": [
+						"Mentions pi-mono/packages/coding-agent/src/core/resource-loader.ts"
+					]
+				}
+			]
+		},
+		{
+			"skill_name": "pi-package-authoring",
+			"evals": [
+				{
+					"id": "pkg-precedence-001",
+					"prompt": "In pi package resolution, what numeric rank does origin package get in resourcePrecedenceRank, and what does lower rank mean for sort order?",
+					"expected_output": "package returns 4; lower rank sorts earlier in resolved lists — cite package-manager.ts comment block.",
+					"files": [],
+					"assertions": ["Mentions pi-mono/packages/coding-agent/src/core/package-manager.ts", "4"]
+				},
+				{
+					"id": "pkg-docs-002",
+					"prompt": "Which pi-mono markdown file documents pi install / pi list / package.json pi manifest for Pi packages?",
+					"expected_output": "pi-mono/packages/coding-agent/docs/packages.md (and cross-ref README Pi Packages).",
+					"files": [],
+					"assertions": ["Mentions pi-mono/packages/coding-agent/docs/packages.md"]
+				},
+				{
+					"id": "pkg-readme-003",
+					"prompt": "Where does the end-user-facing Pi Packages section (pi install examples) live in pi-mono?",
+					"expected_output": "packages/coding-agent/README.md Pi Packages section.",
+					"files": [],
+					"assertions": ["Mentions pi-mono/packages/coding-agent/README.md"]
+				}
+			]
+		},
+		{
+			"skill_name": "pi-ai-library",
+			"evals": [
+				{
+					"id": "ai-provider-001",
+					"prompt": "I need to add a new LLM provider to pi-ai. What is the ordered file checklist in pi-mono AGENTS.md for packages/ai (types, provider file, register-builtins, tests, coding-agent touchpoints)?",
+					"expected_output": "Lists sections from pi-mono/AGENTS.md Adding a New LLM Provider without inventing extra steps.",
+					"files": [],
+					"assertions": ["Mentions pi-mono/AGENTS.md", "packages/ai"]
+				},
+				{
+					"id": "ai-readme-002",
+					"prompt": "Where is the canonical public API overview for stream/complete, Context, and Tool definitions in pi-mono?",
+					"expected_output": "packages/ai/README.md.",
+					"files": [],
+					"assertions": ["Mentions pi-mono/packages/ai/README.md"]
+				},
+				{
+					"id": "ai-src-003",
+					"prompt": "After README, where should I open implementation files for a specific provider under pi-ai?",
+					"expected_output": "pi-mono/packages/ai/src/providers/ and related files per AGENTS.md checklist.",
+					"files": [],
+					"assertions": ["Mentions pi-mono/packages/ai/src/"]
+				}
+			]
+		},
+		{
+			"skill_name": "pi-agent-embedding",
+			"evals": [
+				{
+					"id": "agent-events-001",
+					"prompt": "Summarize the prompt() event sequence for the Agent class (high level) and point to the diagram or list in pi-mono that defines it.",
+					"expected_output": "Uses packages/agent/README.md event flow, not invented ordering.",
+					"files": [],
+					"assertions": ["Mentions pi-mono/packages/agent/README.md"]
+				},
+				{
+					"id": "agent-sdk-002",
+					"prompt": "Where are the numbered SDK examples for createAgentSession and skills configuration in pi-mono?",
+					"expected_output": "packages/coding-agent/examples/sdk/ with README index.",
+					"files": [],
+					"assertions": ["Mentions pi-mono/packages/coding-agent/examples/sdk/"]
+				},
+				{
+					"id": "agent-sdk-doc-003",
+					"prompt": "Which markdown doc in coding-agent describes SDK integration at a high level?",
+					"expected_output": "docs/sdk.md.",
+					"files": [],
+					"assertions": ["Mentions pi-mono/packages/coding-agent/docs/sdk.md"]
+				}
+			]
+		},
+		{
+			"skill_name": "pi-web-ui",
+			"evals": [
+				{
+					"id": "web-quickstart-001",
+					"prompt": "From pi-web-ui README only: what stores and backend class set up IndexedDB for settings and sessions in the Quick Start, and what CSS import is required?",
+					"expected_output": "Matches README snippet classes (SettingsStore, SessionsStore, IndexedDBStorageBackend, app.css path).",
+					"files": [],
+					"assertions": ["Mentions pi-mono/packages/web-ui/README.md"]
+				},
+				{
+					"id": "web-example-002",
+					"prompt": "Where is the minimal Vite example app for pi-web-ui in pi-mono?",
+					"expected_output": "packages/web-ui/example/",
+					"files": [],
+					"assertions": ["Mentions pi-mono/packages/web-ui/example/"]
+				},
+				{
+					"id": "web-deps-003",
+					"prompt": "Which two pi-mono packages does web-ui README list as peers alongside @mariozechner/pi-web-ui for a typical chat setup?",
+					"expected_output": "pi-agent-core and pi-ai per README install line.",
+					"files": [],
+					"assertions": ["Mentions pi-mono/packages/web-ui/README.md"]
+				}
+			]
+		},
+		{
+			"skill_name": "pi-rpc-sdk",
+			"evals": [
+				{
+					"id": "rpc-framing-001",
+					"prompt": "Why is Node readline unsafe for pi RPC JSONL framing, and what characters cause the problem? Answer from pi-mono docs only.",
+					"expected_output": "Quotes rpc.md: U+2028 and U+2029 inside JSON strings; readline splits on those.",
+					"files": [],
+					"assertions": [
+						"Mentions pi-mono/packages/coding-agent/docs/rpc.md",
+						"U+2028",
+						"U+2029"
+					]
+				},
+			{
+				"id": "rpc-sdk-choice-002",
+				"prompt": "For a Node service embedding pi, what does rpc.md recommend instead of subprocess RPC, and which source file does it point TypeScript users to?",
+				"expected_output": "Prefer AgentSession; cites agent-session.ts path as in rpc.md intro.",
+				"files": [],
+				"assertions": [
+					"Mentions pi-mono/packages/coding-agent/docs/rpc.md",
+					"agent-session.ts"
+				]
+			},
+			{
+				"id": "rpc-json-mode-003",
+				"prompt": "What events does pi --mode json emit and how does it differ from --mode rpc? Show a jq example.",
+				"expected_output": "Cites json.md: --mode json is read-only stdout events; --mode rpc is bidirectional.",
+				"files": [],
+				"assertions": ["Mentions pi-mono/packages/coding-agent/docs/json.md"]
+			}
+		]
+		},
+		{
+			"skill_name": "pi-tui",
+			"evals": [
+			{
+				"id": "tui-diff-render-001",
+				"prompt": "How does the Pi TUI update the terminal screen without flickering? Reference the specific sequence or CSI code used.",
+				"expected_output": "Mentions differential rendering and CSI 2026 synchronized output.",
+				"files": [],
+				"assertions": ["Mentions CSI 2026", "Mentions pi-mono/packages/tui/README.md"]
+			},
+			{
+				"id": "tui-component-002",
+				"prompt": "How do I create a custom component in pi-tui that respects width constraints and handles keyboard input? Point me to the interface and the key detection utility.",
+				"expected_output": "Cites Component interface with render(width), matchesKey for input.",
+				"files": [],
+				"assertions": ["Mentions pi-mono/packages/tui/README.md"]
+			},
+			{
+				"id": "tui-overlay-003",
+				"prompt": "How do I show a modal overlay dialog in pi-tui, and what options control its positioning?",
+				"expected_output": "Cites showOverlay from tui README.",
+				"files": [],
+				"assertions": ["Mentions pi-mono/packages/tui/README.md"]
+			}
+		]
+		},
+		{
+			"skill_name": "pi-mom",
+			"evals": [
+			{
+				"id": "mom-dual-file-001",
+				"prompt": "What are the two files Mom uses to manage conversation history per channel, and which one is sent to the LLM?",
+				"expected_output": "log.jsonl is the source of truth, context.jsonl is sent to the LLM.",
+				"files": [],
+				"assertions": ["Mentions log.jsonl", "Mentions context.jsonl", "Mentions pi-mono/packages/mom/README.md"]
+			},
+			{
+				"id": "mom-sandbox-002",
+				"prompt": "Should I run Mom in Docker or host mode, and what are the security tradeoffs?",
+				"expected_output": "Cites sandbox.md: Docker is default and safer; host mode risks.",
+				"files": [],
+				"assertions": ["Mentions pi-mono/packages/mom/docs/sandbox.md"]
+			},
+			{
+				"id": "mom-events-003",
+				"prompt": "How do I schedule a periodic task for Mom to run every morning in a specific channel?",
+				"expected_output": "Cites events.md: periodic event JSON in data/events/.",
+				"files": [],
+				"assertions": ["Mentions pi-mono/packages/mom/docs/events.md"]
+			}
+		]
+		},
+		{
+			"skill_name": "pi-pods",
+			"evals": [
+			{
+				"id": "pods-setup-001",
+				"prompt": "How do I configure pi pods with a DataCrunch NFS volume?",
+				"expected_output": "Mentions pi pods setup with --mount.",
+				"files": [],
+				"assertions": ["Mentions --mount", "Mentions pi-mono/packages/pods/README.md"]
+			},
+			{
+				"id": "pods-model-002",
+				"prompt": "How do I start a Qwen model on a multi-GPU pod and what tool-call parser does pi use for it?",
+				"expected_output": "Cites pods README: pi start with hermes parser for Qwen.",
+				"files": [],
+				"assertions": ["Mentions pi-mono/packages/pods/README.md"]
+			},
+			{
+				"id": "pods-custom-003",
+				"prompt": "How do I pass custom vLLM arguments like tensor-parallel-size when the predefined model CLI shortcuts aren't enough?",
+				"expected_output": "Cites pods README: --vllm flag passes raw args.",
+				"files": [],
+				"assertions": ["Mentions pi-mono/packages/pods/README.md"]
+			}
+		]
+		},
+		{
+			"skill_name": "pi-customization",
+			"evals": [
+			{
+				"id": "cust-theme-001",
+				"prompt": "How do I create a custom theme in pi coding agent?",
+				"expected_output": "Copy dark.json, edit color values, and use pi --theme.",
+				"files": [],
+				"assertions": ["Mentions pi-mono/packages/coding-agent/src/modes/interactive/theme/dark.json", "Mentions pi-mono/packages/coding-agent/docs/themes.md"]
+			},
+			{
+				"id": "cust-keybind-002",
+				"prompt": "How do I remap the submit key in pi from Enter to Ctrl+Enter, and what namespace format do keybinding IDs use?",
+				"expected_output": "Cites keybindings.md: tui.* namespaced IDs in ~/.pi/agent/keybindings.json.",
+				"files": [],
+				"assertions": ["Mentions pi-mono/packages/coding-agent/docs/keybindings.md"]
+			},
+			{
+				"id": "cust-prompt-003",
+				"prompt": "Where are prompt templates loaded from and how does the variable syntax and include directive work?",
+				"expected_output": "Cites prompt-templates.md: locations, frontmatter, /name invocation.",
+				"files": [],
+				"assertions": ["Mentions pi-mono/packages/coding-agent/docs/prompt-templates.md"]
+			}
+		]
+		}
+	]
+}

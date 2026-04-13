@@ -1,0 +1,1 @@
+Pi package install/list flows and the `package.json` **`pi`** manifest are documented in **`pi-mono/packages/coding-agent/docs/packages.md`** (cross-referenced from the end-user Pi Packages discussion in the coding-agent README).

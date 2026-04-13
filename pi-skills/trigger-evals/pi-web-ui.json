@@ -1,0 +1,22 @@
+[
+	{"query": "ChatPanel setAgent defaultConvertToLlm web-ui readme quick start", "should_trigger": true},
+	{"query": "IndexedDBStorageBackend dbName stores array settings provider keys sessions", "should_trigger": true},
+	{"query": "pi web-ui artifacts sandboxed iframe security model readme", "should_trigger": true},
+	{"query": "import app.css from pi-web-ui path", "should_trigger": true},
+	{"query": "ApiKeyPromptDialog usage browser custom providers ollama", "should_trigger": true},
+	{"query": "mini-lit web components tailwind v4 note readme", "should_trigger": true},
+	{"query": "javascript repl tool renderer registry web-ui", "should_trigger": true},
+	{"query": "attachment pdf docx preview pipeline web-ui readme", "should_trigger": true},
+	{"query": "setAppStorage AppStorage constructor args", "should_trigger": true},
+	{"query": "example vite app under packages web-ui example folder", "should_trigger": true},
+	{"query": "material ui datagrid pagination", "should_trigger": false},
+	{"query": "chakra ui modal focus trap", "should_trigger": false},
+	{"query": "antd form validation messages", "should_trigger": false},
+	{"query": "shadcn ui install tailwind config", "should_trigger": false},
+	{"query": "react-router data router loaders", "should_trigger": false},
+	{"query": "vue3 composition api inject provide", "should_trigger": false},
+	{"query": "svelte stores derived writable", "should_trigger": false},
+	{"query": "ember octane glimmer components", "should_trigger": false},
+	{"query": "htmx hx-boost attributes", "should_trigger": false},
+	{"query": "alpine.js x-data scope", "should_trigger": false}
+]

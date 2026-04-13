@@ -1,0 +1,34 @@
+{
+  "skill_name": "pi-mom",
+  "evals": [
+    {
+      "id": "mom-dual-file-001",
+      "prompt": "What are the two files Mom uses to manage conversation history per channel, and which one is sent to the LLM?",
+      "expected_output": "log.jsonl is the source of truth, context.jsonl is sent to the LLM.",
+      "files": [],
+      "assertions": [
+        "Mentions log.jsonl",
+        "Mentions context.jsonl",
+        "Mentions pi-mono/packages/mom/README.md"
+      ]
+    },
+    {
+      "id": "mom-sandbox-002",
+      "prompt": "Should I run Mom in Docker or host mode, and what are the security tradeoffs?",
+      "expected_output": "Cites sandbox.md: Docker is default and safer; host mode risks.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/mom/docs/sandbox.md"
+      ]
+    },
+    {
+      "id": "mom-events-003",
+      "prompt": "How do I schedule a periodic task for Mom to run every morning in a specific channel?",
+      "expected_output": "Cites events.md: periodic event JSON in data/events/.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/mom/docs/events.md"
+      ]
+    }
+  ]
+}

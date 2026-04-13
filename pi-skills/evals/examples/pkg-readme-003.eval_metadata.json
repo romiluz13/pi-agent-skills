@@ -1,0 +1,7 @@
+{
+	"eval_id": "pkg-readme-003",
+	"eval_name": "pi-packages-readme-section",
+	"skill_name": "pi-package-authoring",
+	"prompt": "Where does the end-user-facing Pi Packages section (pi install examples) live in pi-mono?",
+	"assertions": ["Mentions pi-mono/packages/coding-agent/README.md"]
+}

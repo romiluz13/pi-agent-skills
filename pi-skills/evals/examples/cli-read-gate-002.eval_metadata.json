@@ -1,0 +1,10 @@
+{
+	"eval_id": "cli-read-gate-002",
+	"eval_name": "available-skills-read-tool-gate",
+	"skill_name": "pi-cli-workspace",
+	"prompt": "Why would <available_skills> not appear in my system prompt when running pi with a custom tool set? Point to the exact condition in pi-mono source.",
+	"assertions": [
+		"Mentions pi-mono/packages/coding-agent/src/core/system-prompt.ts",
+		"Mentions read tool"
+	]
+}

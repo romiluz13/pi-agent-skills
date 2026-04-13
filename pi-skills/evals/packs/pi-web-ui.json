@@ -1,0 +1,32 @@
+{
+  "skill_name": "pi-web-ui",
+  "evals": [
+    {
+      "id": "web-quickstart-001",
+      "prompt": "From pi-web-ui README only: what stores and backend class set up IndexedDB for settings and sessions in the Quick Start, and what CSS import is required?",
+      "expected_output": "Matches README snippet classes (SettingsStore, SessionsStore, IndexedDBStorageBackend, app.css path).",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/web-ui/README.md"
+      ]
+    },
+    {
+      "id": "web-example-002",
+      "prompt": "Where is the minimal Vite example app for pi-web-ui in pi-mono?",
+      "expected_output": "packages/web-ui/example/",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/web-ui/example/"
+      ]
+    },
+    {
+      "id": "web-deps-003",
+      "prompt": "Which two pi-mono packages does web-ui README list as peers alongside @mariozechner/pi-web-ui for a typical chat setup?",
+      "expected_output": "pi-agent-core and pi-ai per README install line.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/web-ui/README.md"
+      ]
+    }
+  ]
+}

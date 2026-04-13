@@ -1,0 +1,5 @@
+[
+	"pi-mono/packages/coding-agent/src/core/package-manager.ts",
+	"pi-mono/packages/coding-agent/src/core/resource-loader.ts",
+	"pi-mono/packages/coding-agent/src/core/skills.ts"
+]

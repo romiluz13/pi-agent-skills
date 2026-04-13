@@ -1,0 +1,11 @@
+{
+  "eval_id": "mom-dual-file-001",
+  "eval_name": "mom_dual_file_001",
+  "skill_name": "pi-mom",
+  "prompt": "What are the two files Mom uses to manage conversation history per channel, and which one is sent to the LLM?",
+  "assertions": [
+    "Mentions log.jsonl",
+    "Mentions context.jsonl",
+    "Mentions pi-mono/packages/mom/README.md"
+  ]
+}

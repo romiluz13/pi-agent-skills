@@ -1,0 +1,7 @@
+{
+	"eval_id": "ai-src-003",
+	"eval_name": "pi-ai-src-provider-location",
+	"skill_name": "pi-ai-library",
+	"prompt": "After README, where should I open implementation files for a specific provider under pi-ai?",
+	"assertions": ["Mentions pi-mono/packages/ai/src/"]
+}

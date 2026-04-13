@@ -1,0 +1,32 @@
+{
+  "skill_name": "pi-agent-embedding",
+  "evals": [
+    {
+      "id": "agent-events-001",
+      "prompt": "Summarize the prompt() event sequence for the Agent class (high level) and point to the diagram or list in pi-mono that defines it.",
+      "expected_output": "Uses packages/agent/README.md event flow, not invented ordering.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/agent/README.md"
+      ]
+    },
+    {
+      "id": "agent-sdk-002",
+      "prompt": "Where are the numbered SDK examples for createAgentSession and skills configuration in pi-mono?",
+      "expected_output": "packages/coding-agent/examples/sdk/ with README index.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/examples/sdk/"
+      ]
+    },
+    {
+      "id": "agent-sdk-doc-003",
+      "prompt": "Which markdown doc in coding-agent describes SDK integration at a high level?",
+      "expected_output": "docs/sdk.md.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/docs/sdk.md"
+      ]
+    }
+  ]
+}

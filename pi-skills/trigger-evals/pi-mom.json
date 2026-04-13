@@ -1,0 +1,22 @@
+[
+	{"query": "mom slack bot socket mode setup app token", "should_trigger": true},
+	{"query": "context.jsonl compaction log.jsonl sync mom", "should_trigger": true},
+	{"query": "docker sandbox host mode security pi-mom", "should_trigger": true},
+	{"query": "create periodic event data/events cron schedule", "should_trigger": true},
+	{"query": "channel specific memory MEMORY.md global memory", "should_trigger": true},
+	{"query": "self managing install apk add jq curl mom", "should_trigger": true},
+	{"query": "slack bot app_mentions read chat write", "should_trigger": true},
+	{"query": "mom silent completion periodic events", "should_trigger": true},
+	{"query": "auth.json anthropic api key login mom", "should_trigger": true},
+	{"query": "write mom custom skill bash workspace", "should_trigger": true},
+	{"query": "slack bolt sdk node js tutorial", "should_trigger": false},
+	{"query": "hubot github integration slack", "should_trigger": false},
+	{"query": "discord bot builder python", "should_trigger": false},
+	{"query": "slack webhook post message simple", "should_trigger": false},
+	{"query": "docker compose up detached mode", "should_trigger": false},
+	{"query": "alpine linux package manager update", "should_trigger": false},
+	{"query": "cron syntax generator every 15 minutes", "should_trigger": false},
+	{"query": "slack manifest json creator", "should_trigger": false},
+	{"query": "github actions slack notification", "should_trigger": false},
+	{"query": "telegram bot python memory file", "should_trigger": false}
+]

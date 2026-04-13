@@ -1,0 +1,33 @@
+{
+  "skill_name": "pi-extension-authoring",
+  "evals": [
+    {
+      "id": "ext-resources-001",
+      "prompt": "My extension calls extendResources with extra skillPaths. If a skill name collides with one already loaded earlier in reload(), which wins? Quote the merge/ordering logic from pi-mono.",
+      "expected_output": "extendResources appends paths; mergePaths preserves first resolved path; loadSkills first name wins — cite resource-loader.ts and skills.ts.",
+      "files": [],
+      "assertions": [
+        "Mentions extendResources or mergePaths in pi-mono/packages/coding-agent/src/core/resource-loader.ts"
+      ]
+    },
+    {
+      "id": "ext-docs-entry-002",
+      "prompt": "Where is the primary first-party documentation for authoring Pi extensions, and where is the examples index on disk in pi-mono?",
+      "expected_output": "Points to pi-mono/packages/coding-agent/docs/extensions.md and examples path under packages/coding-agent/examples/extensions/.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/docs/extensions.md",
+        "Mentions pi-mono/packages/coding-agent/examples/extensions/"
+      ]
+    },
+    {
+      "id": "ext-conflict-003",
+      "prompt": "When two loaded extensions register conflicting tools or commands, what does pi-mono coding-agent do — drop one extension or keep both and report diagnostics?",
+      "expected_output": "Cites detectExtensionConflicts / errors pushed to extensionsResult in resource-loader reload path; keep all loaded, surface diagnostics.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/src/core/resource-loader.ts"
+      ]
+    }
+  ]
+}

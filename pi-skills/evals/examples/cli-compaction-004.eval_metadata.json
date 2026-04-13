@@ -1,0 +1,9 @@
+{
+  "eval_id": "cli-compaction-004",
+  "eval_name": "cli_compaction_004",
+  "skill_name": "pi-cli-workspace",
+  "prompt": "When does pi auto-compact, how does it choose where to cut, and can I tune it via settings?",
+  "assertions": [
+    "Mentions pi-mono/packages/coding-agent/docs/compaction.md"
+  ]
+}

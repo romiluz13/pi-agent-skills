@@ -1,0 +1,7 @@
+{
+	"eval_id": "web-deps-003",
+	"eval_name": "web-ui-readme-peer-packages",
+	"skill_name": "pi-web-ui",
+	"prompt": "Which two pi-mono packages does web-ui README list as peers alongside @mariozechner/pi-web-ui for a typical chat setup?",
+	"assertions": ["Mentions pi-mono/packages/web-ui/README.md"]
+}

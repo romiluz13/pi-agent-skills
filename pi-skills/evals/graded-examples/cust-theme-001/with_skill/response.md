@@ -1,0 +1,1 @@
+According to `pi-mono/packages/coding-agent/docs/themes.md`, to create a custom theme you should copy `pi-mono/packages/coding-agent/src/modes/interactive/theme/dark.json`, customize its color values under the `colors` key (all 51 tokens are required), place it in `~/.pi/agent/themes/`, and load it using `pi --theme <path>` or select it via `/settings`.

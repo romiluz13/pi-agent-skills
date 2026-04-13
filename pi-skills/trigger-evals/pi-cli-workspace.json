@@ -1,0 +1,22 @@
+[
+	{"query": "same skill name in ~/.pi/agent/skills and .pi/skills which one loads first in pi and cite source files in pi-mono", "should_trigger": true},
+	{"query": "why is available_skills block missing from system prompt when i removed read tool from my extension", "should_trigger": true},
+	{"query": "document mergePaths order for cliEnabledSkills vs enabledSkills in DefaultResourceLoader reload", "should_trigger": true},
+	{"query": "where does pi implement resourcePrecedenceRank for package vs user skills", "should_trigger": true},
+	{"query": "how does /skill:name get expanded before sending to model in agent-session", "should_trigger": true},
+	{"query": "walk me through collectSkillEntries pi mode vs agents mode for root md files", "should_trigger": true},
+	{"query": "i need ~/.pi/agent/settings.json vs .pi/settings.json override behavior for skills paths", "should_trigger": true},
+	{"query": "explain formatSkillsForPrompt xml and disable-model-invocation filtering", "should_trigger": true},
+	{"query": "pi session compaction reserveTokens keepRecentTokens cut point algorithm", "should_trigger": true},
+	{"query": "if i pass --skill ./extra twice plus package skills what wins on duplicate skill name", "should_trigger": true},
+	{"query": "my express.js server returns 404 on api routes after deploying to vercel", "should_trigger": false},
+	{"query": "convert this pandas dataframe to a seaborn heatmap with custom colormap", "should_trigger": false},
+	{"query": "write a dockerfile for a multi-stage build of my go microservice", "should_trigger": false},
+	{"query": "postgres explain analyze this slow join query with nested subselects", "should_trigger": false},
+	{"query": "kubernetes pod crashloopbackoff after upgrading helm chart to v3", "should_trigger": false},
+	{"query": "implement a retry decorator with exponential backoff in python asyncio", "should_trigger": false},
+	{"query": "debug this react native metro bundler error on ios simulator", "should_trigger": false},
+	{"query": "jest mock fetch calls in integration test with msw handlers", "should_trigger": false},
+	{"query": "openssl generate self signed cert with SAN for local dev", "should_trigger": false},
+	{"query": "terraform aws s3 bucket module with versioning and lifecycle", "should_trigger": false}
+]

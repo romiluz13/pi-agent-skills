@@ -1,0 +1,9 @@
+{
+  "eval_id": "cust-prompt-003",
+  "eval_name": "cust_prompt_003",
+  "skill_name": "pi-customization",
+  "prompt": "Where are prompt templates loaded from and how does the variable syntax and include directive work?",
+  "assertions": [
+    "Mentions pi-mono/packages/coding-agent/docs/prompt-templates.md"
+  ]
+}

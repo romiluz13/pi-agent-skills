@@ -1,0 +1,22 @@
+[
+	{"query": "create custom theme dark mode colors pi agent terminal", "should_trigger": true},
+	{"query": "change submit keybinding ctrl enter tui.input.submit pi", "should_trigger": true},
+	{"query": "write a prompt template with positional args $1 $@ for pi", "should_trigger": true},
+	{"query": "tui editor cursorUp namespace keybinding override keybindings.json", "should_trigger": true},
+	{"query": "syntax highlighting theme colors tokens pi-mono coding-agent", "should_trigger": true},
+	{"query": "where do i put custom theme json files in ~/.pi/agent/themes", "should_trigger": true},
+	{"query": "remap enter to ctrl+enter for pi input using keybindings.json", "should_trigger": true},
+	{"query": "change accent and border colors in pi tui theme", "should_trigger": true},
+	{"query": "configure keyboard shortcuts in pi keybindings.json file", "should_trigger": true},
+	{"query": "pi --theme mytheme load custom appearance colors vars", "should_trigger": true},
+	{"query": "vscode user settings json format on save", "should_trigger": false},
+	{"query": "zshrc alias git commit shortcut", "should_trigger": false},
+	{"query": "kitty terminal color scheme gruvbox import", "should_trigger": false},
+	{"query": "tmux prefix key change ctrl a extended-keys", "should_trigger": false},
+	{"query": "neovim keymaps lua configure shortcuts lazy", "should_trigger": false},
+	{"query": "iterm2 profile colors import export plist", "should_trigger": false},
+	{"query": "cursor ide custom rules mdc files agents", "should_trigger": false},
+	{"query": "bashrc export env vars path setup", "should_trigger": false},
+	{"query": "ghostty terminal config keybind font size", "should_trigger": false},
+	{"query": "npm run start shortcut script package.json", "should_trigger": false}
+]

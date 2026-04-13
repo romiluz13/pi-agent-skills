@@ -1,0 +1,7 @@
+{
+	"eval_id": "cli-skill-expand-003",
+	"eval_name": "skill-command-expand-agent-session",
+	"skill_name": "pi-cli-workspace",
+	"prompt": "What happens when I send /skill:my-skill extra args in the pi editor? Which function expands it and where is the skill body read from disk?",
+	"assertions": ["Mentions pi-mono/packages/coding-agent/src/core/agent-session.ts"]
+}

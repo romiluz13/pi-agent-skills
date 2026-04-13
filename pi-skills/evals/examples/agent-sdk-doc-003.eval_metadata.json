@@ -1,0 +1,7 @@
+{
+	"eval_id": "agent-sdk-doc-003",
+	"eval_name": "coding-agent-sdk-markdown-doc",
+	"skill_name": "pi-agent-embedding",
+	"prompt": "Which markdown doc in coding-agent describes SDK integration at a high level?",
+	"assertions": ["Mentions pi-mono/packages/coding-agent/docs/sdk.md"]
+}

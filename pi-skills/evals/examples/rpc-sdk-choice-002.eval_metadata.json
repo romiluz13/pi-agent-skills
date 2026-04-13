@@ -1,0 +1,10 @@
+{
+	"eval_id": "rpc-sdk-choice-002",
+	"eval_name": "rpc-vs-agentsession-node-embedding",
+	"skill_name": "pi-rpc-sdk",
+	"prompt": "For a Node service embedding pi, what does rpc.md recommend instead of subprocess RPC, and which source file does it point TypeScript users to?",
+	"assertions": [
+		"Mentions pi-mono/packages/coding-agent/docs/rpc.md",
+		"agent-session.ts"
+	]
+}

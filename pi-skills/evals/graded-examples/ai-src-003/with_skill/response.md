@@ -1,0 +1,1 @@
+After the public API overview in the README, open provider code under **`pi-mono/packages/ai/src/`** — especially **`pi-mono/packages/ai/src/providers/`** for a specific vendor implementation, matching the **`packages/ai`** checklist in **`pi-mono/AGENTS.md`**.

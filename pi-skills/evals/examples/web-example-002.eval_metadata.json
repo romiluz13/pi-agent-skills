@@ -1,0 +1,7 @@
+{
+	"eval_id": "web-example-002",
+	"eval_name": "web-ui-vite-example-directory",
+	"skill_name": "pi-web-ui",
+	"prompt": "Where is the minimal Vite example app for pi-web-ui in pi-mono?",
+	"assertions": ["Mentions pi-mono/packages/web-ui/example/"]
+}

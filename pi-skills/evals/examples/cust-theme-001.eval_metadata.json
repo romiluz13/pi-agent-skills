@@ -1,0 +1,10 @@
+{
+  "eval_id": "cust-theme-001",
+  "eval_name": "cust_theme_001",
+  "skill_name": "pi-customization",
+  "prompt": "How do I create a custom theme in pi coding agent?",
+  "assertions": [
+    "Mentions pi-mono/packages/coding-agent/src/modes/interactive/theme/dark.json",
+    "Mentions pi-mono/packages/coding-agent/docs/themes.md"
+  ]
+}

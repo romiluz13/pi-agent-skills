@@ -1,0 +1,22 @@
+[
+	{"query": "Agent class prompt vs continue last message must be user or toolResult", "should_trigger": true},
+	{"query": "parallel vs sequential tool execution mode pi agent core readme", "should_trigger": true},
+	{"query": "beforeToolCall afterToolCall hook ordering relative tool_execution events", "should_trigger": true},
+	{"query": "convertToLlm AgentMessage custom types declaration merging", "should_trigger": true},
+	{"query": "examples sdk 04-skills.ts DefaultResourceLoader skillsOverride", "should_trigger": true},
+	{"query": "message_update assistantMessageEvent text_delta subscriber", "should_trigger": true},
+	{"query": "agent_end awaited listeners settlement waitForIdle", "should_trigger": true},
+	{"query": "transformContext prune inject external context step", "should_trigger": true},
+	{"query": "createAgentSession vs createAgentSessionRuntime when to use", "should_trigger": true},
+	{"query": "tool_execution_start tool_execution_end ordering with multiple tools", "should_trigger": true},
+	{"query": "redux toolkit createSlice typescript", "should_trigger": false},
+	{"query": "rxjs switchMap vs mergeMap", "should_trigger": false},
+	{"query": "socket.io rooms scaling redis", "should_trigger": false},
+	{"query": "electron main process ipc secure", "should_trigger": false},
+	{"query": "unity coroutine vs async", "should_trigger": false},
+	{"query": "godot gdscript signals", "should_trigger": false},
+	{"query": "unreal delegate multicast", "should_trigger": false},
+	{"query": "qt qml property binding", "should_trigger": false},
+	{"query": "android jetpack compose state hoisting", "should_trigger": false},
+	{"query": "swift concurrency actor isolation", "should_trigger": false}
+]

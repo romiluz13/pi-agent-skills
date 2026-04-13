@@ -1,0 +1,1 @@
+**`pi-mono/packages/web-ui/README.md`** Installation lists peers alongside **`@mariozechner/pi-web-ui`**: **`@mariozechner/pi-agent-core`** and **`@mariozechner/pi-ai`** (`npm install @mariozechner/pi-web-ui @mariozechner/pi-agent-core @mariozechner/pi-ai`).

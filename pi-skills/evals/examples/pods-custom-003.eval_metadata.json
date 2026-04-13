@@ -1,0 +1,9 @@
+{
+  "eval_id": "pods-custom-003",
+  "eval_name": "pods_custom_003",
+  "skill_name": "pi-pods",
+  "prompt": "How do I pass custom vLLM arguments like tensor-parallel-size when the predefined model CLI shortcuts aren't enough?",
+  "assertions": [
+    "Mentions pi-mono/packages/pods/README.md"
+  ]
+}

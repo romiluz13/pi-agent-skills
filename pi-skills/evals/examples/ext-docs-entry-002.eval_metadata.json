@@ -1,0 +1,10 @@
+{
+	"eval_id": "ext-docs-entry-002",
+	"eval_name": "extensions-docs-and-examples-path",
+	"skill_name": "pi-extension-authoring",
+	"prompt": "Where is the primary first-party documentation for authoring Pi extensions, and where is the examples index on disk in pi-mono?",
+	"assertions": [
+		"Mentions pi-mono/packages/coding-agent/docs/extensions.md",
+		"Mentions pi-mono/packages/coding-agent/examples/extensions/"
+	]
+}

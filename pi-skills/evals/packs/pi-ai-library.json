@@ -1,0 +1,33 @@
+{
+  "skill_name": "pi-ai-library",
+  "evals": [
+    {
+      "id": "ai-provider-001",
+      "prompt": "I need to add a new LLM provider to pi-ai. What is the ordered file checklist in pi-mono AGENTS.md for packages/ai (types, provider file, register-builtins, tests, coding-agent touchpoints)?",
+      "expected_output": "Lists sections from pi-mono/AGENTS.md Adding a New LLM Provider without inventing extra steps.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/AGENTS.md",
+        "packages/ai"
+      ]
+    },
+    {
+      "id": "ai-readme-002",
+      "prompt": "Where is the canonical public API overview for stream/complete, Context, and Tool definitions in pi-mono?",
+      "expected_output": "packages/ai/README.md.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/ai/README.md"
+      ]
+    },
+    {
+      "id": "ai-src-003",
+      "prompt": "After README, where should I open implementation files for a specific provider under pi-ai?",
+      "expected_output": "pi-mono/packages/ai/src/providers/ and related files per AGENTS.md checklist.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/ai/src/"
+      ]
+    }
+  ]
+}

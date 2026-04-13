@@ -1,0 +1,22 @@
+[
+	{"query": "pi --mode rpc JSONL LF delimiter readline unicode separators", "should_trigger": true},
+	{"query": "rpc.md steer vs followUp streamingBehavior prompt command", "should_trigger": true},
+	{"query": "rpc client typescript file rpc-client.ts when subprocess", "should_trigger": true},
+	{"query": "AgentSession instead of rpc for node service cite rpc.md", "should_trigger": true},
+	{"query": "rpc input expansion skill command before queueing", "should_trigger": true},
+	{"query": "extension command during streaming executes immediately rpc.md", "should_trigger": true},
+	{"query": "json response type command success failure correlation id", "should_trigger": true},
+	{"query": "pi rpc images base64 ImageContent format", "should_trigger": true},
+	{"query": "strict split records newline only accept optional cr strip", "should_trigger": true},
+	{"query": "non-node integrator must spawn pi rpc subprocess framing", "should_trigger": true},
+	{"query": "grpc protobuf golang tutorial", "should_trigger": false},
+	{"query": "websocket json rpc browser client reconnect", "should_trigger": false},
+	{"query": "graphql subscription apollo client", "should_trigger": false},
+	{"query": "apache thrift binary protocol", "should_trigger": false},
+	{"query": "zeromq request reply pattern", "should_trigger": false},
+	{"query": "redis streams consumer group", "should_trigger": false},
+	{"query": "kafka producer idempotent config", "should_trigger": false},
+	{"query": "mqtt qos levels explained", "should_trigger": false},
+	{"query": "amqp rabbitmq exchange routing key", "should_trigger": false},
+	{"query": "nats jetstream consumer", "should_trigger": false}
+]

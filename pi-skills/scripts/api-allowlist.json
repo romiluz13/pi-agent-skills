@@ -1,0 +1,12 @@
+[
+	{ "symbol": "formatSkillsForPrompt", "file": "packages/coding-agent/src/core/skills.ts" },
+	{ "symbol": "loadSkills", "file": "packages/coding-agent/src/core/skills.ts" },
+	{ "symbol": "resourcePrecedenceRank", "file": "packages/coding-agent/src/core/package-manager.ts" },
+	{ "symbol": "buildSystemPrompt", "file": "packages/coding-agent/src/core/system-prompt.ts" },
+	{ "symbol": "DefaultResourceLoader", "file": "packages/coding-agent/src/core/resource-loader.ts" },
+	{ "symbol": "_expandSkillCommand", "file": "packages/coding-agent/src/core/agent-session.ts" },
+	{ "symbol": "collectSkillEntries", "file": "packages/coding-agent/src/core/package-manager.ts" },
+	{ "symbol": "Agent", "file": "packages/agent/README.md" },
+	{ "symbol": "stream", "file": "packages/ai/README.md" },
+	{ "symbol": "ChatPanel", "file": "packages/web-ui/README.md" }
+]

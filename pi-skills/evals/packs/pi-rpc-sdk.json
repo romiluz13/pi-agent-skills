@@ -1,0 +1,35 @@
+{
+  "skill_name": "pi-rpc-sdk",
+  "evals": [
+    {
+      "id": "rpc-framing-001",
+      "prompt": "Why is Node readline unsafe for pi RPC JSONL framing, and what characters cause the problem? Answer from pi-mono docs only.",
+      "expected_output": "Quotes rpc.md: U+2028 and U+2029 inside JSON strings; readline splits on those.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/docs/rpc.md",
+        "U+2028",
+        "U+2029"
+      ]
+    },
+    {
+      "id": "rpc-sdk-choice-002",
+      "prompt": "For a Node service embedding pi, what does rpc.md recommend instead of subprocess RPC, and which source file does it point TypeScript users to?",
+      "expected_output": "Prefer AgentSession; cites agent-session.ts path as in rpc.md intro.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/docs/rpc.md",
+        "agent-session.ts"
+      ]
+    },
+    {
+      "id": "rpc-json-mode-003",
+      "prompt": "What events does pi --mode json emit and how does it differ from --mode rpc? Show a jq example.",
+      "expected_output": "Cites json.md: --mode json is read-only stdout events; --mode rpc is bidirectional.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/docs/json.md"
+      ]
+    }
+  ]
+}

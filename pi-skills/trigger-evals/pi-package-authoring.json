@@ -1,0 +1,22 @@
+[
+	{"query": "package.json pi key skills extensions array for pi-package npm publish", "should_trigger": true},
+	{"query": "pi install npm:@scope/pkg@1.2.3 pinned version behavior", "should_trigger": true},
+	{"query": "pi install git:github.com/user/repo@v1 skill paths end up where", "should_trigger": true},
+	{"query": "keywords pi-package required or conventional", "should_trigger": true},
+	{"query": "resourcePrecedenceRank package origin 4 meaning vs user project", "should_trigger": true},
+	{"query": "pi list pi update skips pinned packages explain", "should_trigger": true},
+	{"query": "project local pi install -l paths .pi/npm vs global", "should_trigger": true},
+	{"query": "security review third party pi package before install", "should_trigger": true},
+	{"query": "auto discover skills directory without pi manifest", "should_trigger": true},
+	{"query": "settings.json skills array add ~/.claude/skills for pi", "should_trigger": true},
+	{"query": "npm publish scoped package private registry", "should_trigger": false},
+	{"query": "yarn berry pnp vs node_modules", "should_trigger": false},
+	{"query": "vscode extension marketplace json manifest", "should_trigger": false},
+	{"query": "homebrew formula create from tarball", "should_trigger": false},
+	{"query": "pypi twine upload token", "should_trigger": false},
+	{"query": "cargo publish crate versioning", "should_trigger": false},
+	{"query": "apt repository signing key", "should_trigger": false},
+	{"query": "helm chart dependencies version range", "should_trigger": false},
+	{"query": "gradle publish to maven central", "should_trigger": false},
+	{"query": "nuget pack nuspec", "should_trigger": false}
+]

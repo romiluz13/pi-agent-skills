@@ -1,0 +1,33 @@
+{
+  "skill_name": "pi-pods",
+  "evals": [
+    {
+      "id": "pods-setup-001",
+      "prompt": "How do I configure pi pods with a DataCrunch NFS volume?",
+      "expected_output": "Mentions pi pods setup with --mount.",
+      "files": [],
+      "assertions": [
+        "Mentions --mount",
+        "Mentions pi-mono/packages/pods/README.md"
+      ]
+    },
+    {
+      "id": "pods-model-002",
+      "prompt": "How do I start a Qwen model on a multi-GPU pod and what tool-call parser does pi use for it?",
+      "expected_output": "Cites pods README: pi start with hermes parser for Qwen.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/pods/README.md"
+      ]
+    },
+    {
+      "id": "pods-custom-003",
+      "prompt": "How do I pass custom vLLM arguments like tensor-parallel-size when the predefined model CLI shortcuts aren't enough?",
+      "expected_output": "Cites pods README: --vllm flag passes raw args.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/pods/README.md"
+      ]
+    }
+  ]
+}

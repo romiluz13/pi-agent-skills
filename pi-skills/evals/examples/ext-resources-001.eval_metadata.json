@@ -1,0 +1,9 @@
+{
+	"eval_id": "ext-resources-001",
+	"eval_name": "extend-resources-skill-path-merge",
+	"skill_name": "pi-extension-authoring",
+	"prompt": "My extension calls extendResources with extra skillPaths. If a skill name collides with one already loaded earlier in reload(), which wins? Quote the merge/ordering logic from pi-mono.",
+	"assertions": [
+		"Mentions extendResources or mergePaths in pi-mono/packages/coding-agent/src/core/resource-loader.ts"
+	]
+}

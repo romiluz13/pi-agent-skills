@@ -1,0 +1,1 @@
+In `pi-mono/packages/coding-agent/src/core/package-manager.ts`, **`resourcePrecedenceRank`** returns **`4`** when **`m.origin === "package"`**. Resolved resource lists are **`sort`ed by that rank** so **lower numbers appear earlier** in the merged ordering (project/user origins use smaller ranks than package).

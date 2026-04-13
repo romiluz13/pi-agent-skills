@@ -1,0 +1,7 @@
+{
+	"eval_id": "ai-provider-001",
+	"eval_name": "new-llm-provider-agents-checklist",
+	"skill_name": "pi-ai-library",
+	"prompt": "I need to add a new LLM provider to pi-ai. What is the ordered file checklist in pi-mono AGENTS.md for packages/ai (types, provider file, register-builtins, tests, coding-agent touchpoints)?",
+	"assertions": ["Mentions pi-mono/AGENTS.md", "packages/ai"]
+}

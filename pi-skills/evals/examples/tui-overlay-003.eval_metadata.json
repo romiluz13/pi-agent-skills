@@ -1,0 +1,9 @@
+{
+  "eval_id": "tui-overlay-003",
+  "eval_name": "tui_overlay_003",
+  "skill_name": "pi-tui",
+  "prompt": "How do I show a modal overlay dialog in pi-tui, and what options control its positioning?",
+  "assertions": [
+    "Mentions pi-mono/packages/tui/README.md"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+	"eval_id": "pkg-docs-002",
+	"eval_name": "pi-packages-markdown-location",
+	"skill_name": "pi-package-authoring",
+	"prompt": "Which pi-mono markdown file documents pi install / pi list / package.json pi manifest for Pi packages?",
+	"assertions": ["Mentions pi-mono/packages/coding-agent/docs/packages.md"]
+}

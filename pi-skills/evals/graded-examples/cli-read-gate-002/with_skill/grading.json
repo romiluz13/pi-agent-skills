@@ -1,0 +1,19 @@
+{
+  "generated_by": "pi-skills/scripts/grade-assertions.mjs",
+  "expectations": [
+    {
+      "text": "pi-mono/packages/coding-agent/src/core/system-prompt.ts",
+      "passed": true,
+      "evidence": "Found substring in response"
+    },
+    {
+      "text": "read tool",
+      "passed": true,
+      "evidence": "Found substring in response"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "total": 2
+  }
+}

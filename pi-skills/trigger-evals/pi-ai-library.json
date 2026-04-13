@@ -1,0 +1,22 @@
+[
+	{"query": "pi-ai stream vs complete when to use Context tools TypeBox", "should_trigger": true},
+	{"query": "add new provider bedrock steps AGENTS.md packages ai checklist", "should_trigger": true},
+	{"query": "getModel openai gpt tool capable list where maintained", "should_trigger": true},
+	{"query": "streaming toolcall_delta partial json handling pi-ai", "should_trigger": true},
+	{"query": "cross provider handoff Context serialization pi-ai readme", "should_trigger": true},
+	{"query": "thinking_start thinking_delta events unified interface", "should_trigger": true},
+	{"query": "register-builtins lazy loader pattern providers", "should_trigger": true},
+	{"query": "env-api-keys credential detection new provider", "should_trigger": true},
+	{"query": "image limits test file names packages ai test folder", "should_trigger": true},
+	{"query": "OAuth providers vertex cli login flow pi-ai readme", "should_trigger": true},
+	{"query": "langchain RunnableSequence lcel tutorial", "should_trigger": false},
+	{"query": "openai python sdk assistants api", "should_trigger": false},
+	{"query": "anthropic messages api curl example without pi", "should_trigger": false},
+	{"query": "huggingface transformers fine tune lora", "should_trigger": false},
+	{"query": "gemini api key android kotlin", "should_trigger": false},
+	{"query": "ollama modelfile syntax", "should_trigger": false},
+	{"query": "litellm proxy config yaml", "should_trigger": false},
+	{"query": "vercel ai sdk streamtext", "should_trigger": false},
+	{"query": "aws sdk v3 dynamodb document client", "should_trigger": false},
+	{"query": "stripe webhook signature verify node", "should_trigger": false}
+]

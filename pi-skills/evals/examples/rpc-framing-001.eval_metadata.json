@@ -1,0 +1,11 @@
+{
+	"eval_id": "rpc-framing-001",
+	"eval_name": "rpc-jsonl-framing-vs-readline",
+	"skill_name": "pi-rpc-sdk",
+	"prompt": "Why is Node readline unsafe for pi RPC JSONL framing, and what characters cause the problem? Answer from pi-mono docs only.",
+	"assertions": [
+		"Mentions pi-mono/packages/coding-agent/docs/rpc.md",
+		"U+2028",
+		"U+2029"
+	]
+}

@@ -1,0 +1,7 @@
+{
+	"eval_id": "pkg-precedence-001",
+	"eval_name": "package-origin-precedence-rank",
+	"skill_name": "pi-package-authoring",
+	"prompt": "In pi package resolution, what numeric rank does origin package get in resourcePrecedenceRank, and what does lower rank mean for sort order?",
+	"assertions": ["Mentions pi-mono/packages/coding-agent/src/core/package-manager.ts", "4"]
+}

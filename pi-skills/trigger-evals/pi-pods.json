@@ -1,0 +1,22 @@
+[
+	{"query": "pi pods setup datacrunch mount nfs volume", "should_trigger": true},
+	{"query": "pi start qwen2.5-coder memory context gpus", "should_trigger": true},
+	{"query": "custom vllm args tensor-parallel-size pi", "should_trigger": true},
+	{"query": "runpod setup network volume ssh pi pods", "should_trigger": true},
+	{"query": "auto tool call parser hermes glm4_moe pi", "should_trigger": true},
+	{"query": "pi-agent standalone cli openai base url", "should_trigger": true},
+	{"query": "multi gpu automatic assignment pi start", "should_trigger": true},
+	{"query": "gpt-oss vllm nightly build setup pi", "should_trigger": true},
+	{"query": "pi ssh nvidia-smi watch pod", "should_trigger": true},
+	{"query": "session persistence pi agent interactive mode", "should_trigger": true},
+	{"query": "vllm offline inference python script", "should_trigger": false},
+	{"query": "aws ec2 p4d instance launch terraform", "should_trigger": false},
+	{"query": "ollama run llama3 local macos", "should_trigger": false},
+	{"query": "huggingface text generation inference tgi docker", "should_trigger": false},
+	{"query": "runpod serverless endpoint creation", "should_trigger": false},
+	{"query": "datacrunch api key provisioning", "should_trigger": false},
+	{"query": "vast ai rent gpu instance cli", "should_trigger": false},
+	{"query": "llama cpp quantized models metal", "should_trigger": false},
+	{"query": "openai chat completions api curl", "should_trigger": false},
+	{"query": "kubernetes gpu scheduling nvidia plugin", "should_trigger": false}
+]

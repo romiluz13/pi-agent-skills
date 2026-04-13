@@ -1,0 +1,1 @@
+End-user **`pi install`** examples and the **Pi Packages** overview live in **`pi-mono/packages/coding-agent/README.md`** under the **### Pi Packages** heading (npm/git install lines and related CLI references).

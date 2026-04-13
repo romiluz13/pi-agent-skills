@@ -1,0 +1,7 @@
+{
+	"eval_id": "web-quickstart-001",
+	"eval_name": "web-ui-readme-quickstart-storage-css",
+	"skill_name": "pi-web-ui",
+	"prompt": "From pi-web-ui README only: what stores and backend class set up IndexedDB for settings and sessions in the Quick Start, and what CSS import is required?",
+	"assertions": ["Mentions pi-mono/packages/web-ui/README.md"]
+}

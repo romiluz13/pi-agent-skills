@@ -1,0 +1,7 @@
+{
+	"eval_id": "agent-events-001",
+	"eval_name": "agent-prompt-event-sequence-readme",
+	"skill_name": "pi-agent-embedding",
+	"prompt": "Summarize the prompt() event sequence for the Agent class (high level) and point to the diagram or list in pi-mono that defines it.",
+	"assertions": ["Mentions pi-mono/packages/agent/README.md"]
+}

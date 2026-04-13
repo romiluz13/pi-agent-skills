@@ -1,0 +1,9 @@
+{
+  "eval_id": "pods-model-002",
+  "eval_name": "pods_model_002",
+  "skill_name": "pi-pods",
+  "prompt": "How do I start a Qwen model on a multi-GPU pod and what tool-call parser does pi use for it?",
+  "assertions": [
+    "Mentions pi-mono/packages/pods/README.md"
+  ]
+}

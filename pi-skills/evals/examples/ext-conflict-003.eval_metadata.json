@@ -1,0 +1,7 @@
+{
+	"eval_id": "ext-conflict-003",
+	"eval_name": "extension-tool-conflict-diagnostics",
+	"skill_name": "pi-extension-authoring",
+	"prompt": "When two loaded extensions register conflicting tools or commands, what does pi-mono coding-agent do — drop one extension or keep both and report diagnostics?",
+	"assertions": ["Mentions pi-mono/packages/coding-agent/src/core/resource-loader.ts"]
+}

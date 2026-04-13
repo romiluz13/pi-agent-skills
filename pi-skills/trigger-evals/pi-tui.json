@@ -1,0 +1,22 @@
+[
+	{"query": "create custom TUI component differential rendering pi-tui", "should_trigger": true},
+	{"query": "handle input matchesKey enter arrow keys TUI", "should_trigger": true},
+	{"query": "Focusable IME support cursor position TUI", "should_trigger": true},
+	{"query": "truncateToWidth visibleWidth ansi escape codes", "should_trigger": true},
+	{"query": "showOverlay TUI dialog window pi-mono", "should_trigger": true},
+	{"query": "CSI 2026 synchronized output flicker free", "should_trigger": true},
+	{"query": "Markdown component highlightCode custom theme TUI", "should_trigger": true},
+	{"query": "CombinedAutocompleteProvider slash commands Editor", "should_trigger": true},
+	{"query": "CancellableLoader abort signal Escape key", "should_trigger": true},
+	{"query": "SettingsList SelectList navigation keys", "should_trigger": true},
+	{"query": "react blessed ink terminal ui", "should_trigger": false},
+	{"query": "chalk ansi colors npm package", "should_trigger": false},
+	{"query": "blessed contrib widgets tutorial", "should_trigger": false},
+	{"query": "inquirer prompts cli choices", "should_trigger": false},
+	{"query": "enquirer password input masking", "should_trigger": false},
+	{"query": "commander js subcommands options", "should_trigger": false},
+	{"query": "yargs option parsing cli", "should_trigger": false},
+	{"query": "oclif commands builder args", "should_trigger": false},
+	{"query": "charmbracelet bubbletea golang tui", "should_trigger": false},
+	{"query": "ratatui rust terminal interface", "should_trigger": false}
+]

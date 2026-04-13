@@ -1,0 +1,9 @@
+{
+  "eval_id": "cust-keybind-002",
+  "eval_name": "cust_keybind_002",
+  "skill_name": "pi-customization",
+  "prompt": "How do I remap the submit key in pi from Enter to Ctrl+Enter, and what namespace format do keybinding IDs use?",
+  "assertions": [
+    "Mentions pi-mono/packages/coding-agent/docs/keybindings.md"
+  ]
+}

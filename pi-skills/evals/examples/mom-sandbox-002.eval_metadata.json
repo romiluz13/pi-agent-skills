@@ -1,0 +1,9 @@
+{
+  "eval_id": "mom-sandbox-002",
+  "eval_name": "mom_sandbox_002",
+  "skill_name": "pi-mom",
+  "prompt": "Should I run Mom in Docker or host mode, and what are the security tradeoffs?",
+  "assertions": [
+    "Mentions pi-mono/packages/mom/docs/sandbox.md"
+  ]
+}

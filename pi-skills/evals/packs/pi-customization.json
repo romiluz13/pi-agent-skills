@@ -1,0 +1,33 @@
+{
+  "skill_name": "pi-customization",
+  "evals": [
+    {
+      "id": "cust-theme-001",
+      "prompt": "How do I create a custom theme in pi coding agent?",
+      "expected_output": "Copy dark.json, edit color values, and use pi --theme.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/src/modes/interactive/theme/dark.json",
+        "Mentions pi-mono/packages/coding-agent/docs/themes.md"
+      ]
+    },
+    {
+      "id": "cust-keybind-002",
+      "prompt": "How do I remap the submit key in pi from Enter to Ctrl+Enter, and what namespace format do keybinding IDs use?",
+      "expected_output": "Cites keybindings.md: tui.* namespaced IDs in ~/.pi/agent/keybindings.json.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/docs/keybindings.md"
+      ]
+    },
+    {
+      "id": "cust-prompt-003",
+      "prompt": "Where are prompt templates loaded from and how does the variable syntax and include directive work?",
+      "expected_output": "Cites prompt-templates.md: locations, frontmatter, /name invocation.",
+      "files": [],
+      "assertions": [
+        "Mentions pi-mono/packages/coding-agent/docs/prompt-templates.md"
+      ]
+    }
+  ]
+}

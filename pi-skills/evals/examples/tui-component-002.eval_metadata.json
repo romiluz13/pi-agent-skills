@@ -1,0 +1,9 @@
+{
+  "eval_id": "tui-component-002",
+  "eval_name": "tui_component_002",
+  "skill_name": "pi-tui",
+  "prompt": "How do I create a custom component in pi-tui that respects width constraints and handles keyboard input? Point me to the interface and the key detection utility.",
+  "assertions": [
+    "Mentions pi-mono/packages/tui/README.md"
+  ]
+}
