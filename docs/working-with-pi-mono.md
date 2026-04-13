@@ -1,28 +1,30 @@
-# Working with `pi-mono` in this repo
+# Working with `pi-mono`
 
-This workspace is **two things at once**:
+This repo has two jobs:
 
-1. `**pi-mono/`** — the upstream [Pi monorepo](https://github.com/badlogic/pi-mono): real source, builds, tests, and **canonical documentation** inside that tree.
-2. `**pi-skills/`** — Agent Skills that teach models to answer **only** from paths that exist under your local `pi-mono/`, plus validators so citations stay honest.
-3. `**skills/`** (repo root) — symlinks into `**pi-skills/pi-***` so the [open Agent Skills CLI](https://github.com/vercel-labs/skills) can install this repo with `**npx skills add owner/pi-skill**` (same distribution model as [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)).
+1. `pi-mono/` is the upstream source tree. It provides the real docs, code, examples, and tests.
+2. `pi-skills/` packages that source into skills, evals, and verification rules that keep answers grounded.
+3. `skills/` is the install surface for the open `skills` CLI. It symlinks back into `pi-skills/pi-*`.
 
-If you only care about Pi itself, read `**pi-mono/README.md**` and `**pi-mono/packages/coding-agent/README.md**`. If you care about **skills + pins + CI**, read this file and `**pi-skills/README.md`**.
+If you want to understand Pi itself, start with `pi-mono/README.md` and `pi-mono/packages/coding-agent/README.md`.
+
+If you want to work on the skills repo, read this file and `pi-skills/README.md`.
 
 ---
 
-## First-time clone (full tree)
+## First-time setup
 
 From an empty directory where you want both trees:
 
 ```bash
 git clone https://github.com/badlogic/pi-mono.git pi-mono
 cd pi-mono && npm install && npm run build && npm run check && cd ..
-# clone or copy your pi-skill repo beside pi-mono so you have:
+# clone or copy your skills repo beside pi-mono so you have:
 #   pi-skill/pi-mono/
 #   pi-skill/pi-skills/
 ```
 
-**Layout contract:** `pi-skills` validators resolve `pi-mono/` as `**../pi-mono`** relative to the `pi-skills` folder (repo root contains both). Do not nest `pi-mono` only inside `pi-skills` unless you change paths.
+`pi-skills` validators resolve `pi-mono/` as `../pi-mono` relative to `pi-skills/`. Keep that layout unless you also change the verification scripts.
 
 ---
 
@@ -41,7 +43,7 @@ Use a **full** clone when you are editing `pi-mono` or running its full test sui
 
 ---
 
-## Where the real docs live (upstream)
+## Where the upstream docs live
 
 
 | Need                                       | Start here                                                                                            |
@@ -56,11 +58,11 @@ Use a **full** clone when you are editing `pi-mono` or running its full test sui
 | Rules for humans/agents on **pi-mono**     | `[pi-mono/AGENTS.md](../pi-mono/AGENTS.md)`                                                           |
 
 
-The `**pi-*` skills** under `pi-skills/` are a **curated index** into these files (and a few `src/` paths). They do not replace upstream docs.
+The `pi-*` skills under `pi-skills/` are a curated index into these files and selected `src/` paths. They do not replace the upstream docs.
 
 ---
 
-## Standard Pi development commands
+## Pi development commands
 
 From `**pi-mono/`** (uses **npm**, not bun):
 
@@ -72,11 +74,11 @@ npm run check   # requires build first; see pi-mono README
 ./pi-test.sh    # run pi from sources
 ```
 
-If you change upstream APIs that skills cite, update the affected `**pi-skills/pi-*/SKILL.md**` (and evals) and run `**cd pi-skills && npm run verify-skills**`.
+If you change upstream APIs that the skills cite, update the affected `pi-skills/pi-*/SKILL.md` files and evals, then run `cd pi-skills && npm run verify-skills`.
 
 ---
 
-## Pinning and corpus honesty (this repo)
+## Pinning and corpus honesty
 
 
 | File                                  | Role                                                            |
@@ -95,22 +97,22 @@ cd pi-skills && npm run bump-corpus && npm run verify-skills && npm run sync-eva
 
 ---
 
-## Agents editing this workspace
+## Editing this workspace
 
-- **Changing `pi-skills/` only:** follow root `**AGENTS.md`** and run `**npm run verify-skills**` before claiming done.
-- **Changing `pi-mono/`:** follow `**pi-mono/AGENTS.md`** and Pi’s `**CONTRIBUTING.md**`; run `**npm run check**` and `**./test.sh**` from `pi-mono/`.
-- **Never invent** `pi-mono/...` paths in skills or evals — the validators and `api-allowlist` exist to catch that.
+- If you change `pi-skills/` only, follow the root `AGENTS.md` and run `npm run verify-skills` before you call it done.
+- If you change `pi-mono/`, follow `pi-mono/AGENTS.md` and Pi’s `CONTRIBUTING.md`, then run `npm run check` and `./test.sh` from `pi-mono/`.
+- Never invent `pi-mono/...` paths in skills or evals. The validators and `api-allowlist` exist to catch that.
 
 ---
 
-## Installing the skills (not pi-mono)
+## Installing the skills
 
 See the root **[README.md](../README.md)** (Pi `~/.pi`, `pi install`, optional Cursor symlinks).
 
-## Skill-creator evaluation loop
+## Skill-creator loop
 
-If you are iterating skills with Anthropic’s **skill-creator** (parallel with/without skill, viewer, description optimization), use `**pi-skills/docs/skill-creator-workspace.md`** — it maps every phase to paths and npm commands in this repo.
+If you are iterating skills with Anthropic’s skill-creator, use `pi-skills/docs/skill-creator-workspace.md`. It maps the full loop onto this repo: eval workspaces, grading, viewer output, and trigger-description tuning.
 
 ## Grading needles
 
-How human `**all-evals.json**` assertions become machine needles and how to extend them: `**docs/needle-rules.md**`.
+`docs/needle-rules.md` explains how human assertions from `all-evals.json` become machine substring needles and how to extend the extractor safely.

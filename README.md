@@ -1,90 +1,83 @@
-# pi-skill workspace
+# Pi Agent Skills
 
-Code-grounded **Pi builder** Agent Skills plus a pinned [pi-mono](https://github.com/badlogic/pi-mono) corpus. Skills answer from `pi-mono/` paths only; validators enforce cited paths exist.
+Source-grounded skills for [Pi](https://github.com/badlogic/pi-mono).
 
-**New here?** Read **[docs/working-with-pi-mono.md](docs/working-with-pi-mono.md)** for how to clone, where upstream documentation lives, Pi’s `npm` dev commands, and how pins (`.pi-mono-rev`, `CORPUS.md`) relate to **`pi-skills/`**. Agents should read root **`AGENTS.md`**.
+This repo packages 11 skills that answer Pi questions from a pinned `pi-mono` checkout instead of guessing from memory. Every cited `pi-mono/...` path is verified on disk. Every shipped eval, graded baseline, and trigger set is checked in CI.
 
-## Layout
+If you want Pi-focused answers that are package-aware, file-aware, and harder to hallucinate, this repo is the point.
+
+## Why use these skills
+
+- Pi documentation is split across package READMEs, `docs/`, examples, and source files. These skills turn that into package-level entry points.
+- Answers are forced to stay grounded in real `pi-mono/...` paths. Broken citations fail verification.
+- The repo ships developer-facing checks, not just Markdown: eval catalogs, graded baselines, trigger sets, and verification scripts live alongside the skills.
+
+## Coverage
+
+| Skill | Focus |
+|------|-------|
+| `pi-cli-workspace` | CLI behavior, settings, sessions, compaction, `/tree`, providers, models, philosophy |
+| `pi-extension-authoring` | `ExtensionAPI`, commands, tools, dynamic resources, TUI integration, custom providers |
+| `pi-package-authoring` | Pi packages, manifests, install/update behavior, precedence |
+| `pi-ai-library` | `@mariozechner/pi-ai`, providers, streaming, tool calling, provider work |
+| `pi-agent-embedding` | `@mariozechner/pi-agent-core`, events, embedding, SDK examples |
+| `pi-web-ui` | `@mariozechner/pi-web-ui`, storage, example app, browser integration |
+| `pi-rpc-sdk` | RPC mode, JSON mode, `AgentSession`, SDK entry points |
+| `pi-tui` | `@mariozechner/pi-tui`, components, overlays, rendering, input handling |
+| `pi-mom` | Slack bot, sandboxing, events, artifacts server, multi-platform docs |
+| `pi-pods` | GPU pod setup, vLLM config, model startup, tool parsers |
+| `pi-customization` | themes, keybindings, prompt templates, system prompt overrides |
+
+## Repo Layout
 
 | Path | Purpose |
 |------|---------|
-| `skills/` | **Open Skills CLI** install root (same idea as [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)): symlinks to each `pi-skills/pi-*` so `npx skills add <github>/pi-skill` discovers skills. See **`skills/README.md`**. |
-| `pi-mono/` | Upstream Pi monorepo — CI and pins use `.pi-mono-rev` at repo root. After updating `pi-mono`, run `cd pi-skills && npm run bump-corpus` (writes `.pi-mono-rev` + all `CORPUS.md` lines), then `npm run verify-skills && npm run sync-evals`. |
-| `pi-skills/` | Eleven `pi-*` skills + validators (`npm run verify-skills` or **`npm run ci`** = regrade + all gates). |
-| `pi-skills/evals/` | Skill-creator eval prompts (`all-evals.json`). |
-| `pi-skills/trigger-evals/` | Description trigger tuning sets (should / should-not) per skill. |
-| `pi-skills-workspace/` | Skill-creator iteration outputs (gitignored). Layout: `pi-skills/docs/skill-creator-workspace.md`. |
+| `pi-skills/` | Canonical skills source: `SKILL.md`, references, evals, trigger sets, scripts, tests |
+| `skills/` | Symlinked install surface for the open `skills` CLI |
+| `pi-mono/` | Local clone used as the source corpus when developing or verifying this repo |
+| `docs/` | Repo docs for corpus layout, grading needles, and related workflows |
+| `.claude-plugin/` | Claude Code plugin manifest for loading the repo as a plugin |
 
-## Commands
+Read [docs/working-with-pi-mono.md](docs/working-with-pi-mono.md) before editing anything substantial. It explains the clone layout, corpus pinning, and where upstream Pi docs actually live.
 
-```bash
-cd pi-skills && npm run verify-skills   # fast: all static gates
-cd pi-skills && npm run ci              # CI parity: regrade 35 baselines, then all gates
-```
+## Install
 
-`verify-skills` runs **19** sub-verifiers (skill corpus paths, **docs/README corpus paths**, **40-char `.pi-mono-rev`**, **`pi.skills` → `SKILL.md`**, pin, **all-evals schema + pack order**, eval paths, **unique eval ids**, **packs manifest sync**, frontmatter key allowlist, **unique API allowlist rows**, API symbol checks, graded snapshots, graded response paths, eval artifact sync, graded needles, **needles present in baseline responses**, trigger-eval JSON incl. **orphan** files). Run **`npm test`** for **`grade-needles`** / **`pi-mono-paths`** unit checks. Grading rules: **`docs/needle-rules.md`**.
+### Open Skills CLI
 
-After editing eval definitions: `cd pi-skills && npm run sync-evals`. New baseline: `npm run scaffold-graded-example -- --id <eval_id>`. Extract needles: `npm run extract-grade-assertions -- --id rpc-framing-001`.
-
-## Completion (this repo)
-
-| Area | Status |
-|------|--------|
-| Eleven code-grounded `pi-*` skills + `CORPUS.md` pins | Done |
-| `all-evals.json` ↔ examples ↔ graded baselines (35/35) | Done |
-| Automated gates (incl. trigger sets: 10 should / 10 should-not × 11 skills) | Done |
-| Docs: `docs/working-with-pi-mono.md`, **`docs/needle-rules.md`**, skill-creator playbook, `AGENTS.md`, `CONTRIBUTING.md`, `LICENSE` | Done |
-| GitHub Action: shallow `pi-mono` + `npm run ci` + pack diff | Done |
-
-**~100%** = everything above is implemented and enforced in CI. What stays **manual / environment-specific**: skill-creator **`run_loop`** (needs `claude -p`), parallel with/without-skill runs, `generate_review.py`, and choosing when to **`bump-corpus`**. Distribution for end users is **`npx skills add your/pi-skill`** (GitHub), not publishing these markdown trees as an npm package.
-
-Upstream **pi-mono** uses **npm** (not bun) for its own build/check.
-
-## Skill-creator
-
-Full loop (parallel runs, `grading.json` schema, `aggregate_benchmark`, `generate_review.py`, `run_loop`, trigger sets) is mapped step-by-step in **`pi-skills/docs/skill-creator-workspace.md`**. Upstream plugin: [claude-plugins-official / skill-creator](https://github.com/anthropics/claude-plugins-official). Point `eval-viewer/generate_review.py` at `pi-skills-workspace/iteration-N` after baselines complete.
-
-## Claude Code Plugin
-
-This repo ships a `.claude-plugin/plugin.json` manifest so the **repo root is a valid Claude Code plugin**. Skills load under the `pi-skill:` namespace.
+Use the repo as a skills bundle from GitHub:
 
 ```bash
-# Local dev / one-off session
-claude --plugin-dir /path/to/pi-skill
+# Install all skills
+npx skills add romiluz13/pi-agent-skills -a pi -y
 
-# Skills are invocable as:
-# /pi-skill:pi-cli-workspace
-# /pi-skill:pi-extension-authoring
-# /pi-skill:pi-ai-library
-# ... (all 11 skills)
+# Inspect what the bundle exports
+npx skills add romiluz13/pi-agent-skills --list
+
+# Install a single skill
+npx skills add https://github.com/romiluz13/pi-agent-skills/tree/main/skills/pi-cli-workspace -a pi -y
 ```
 
-To submit to the official Anthropic marketplace: `claude.ai/settings/plugins/submit` or `platform.claude.com/plugins/submit`.
+### Claude Code Plugin
 
----
-
-## Installing skills (Vercel / Open Skills CLI)
-
-This repo is meant to be consumed **from GitHub** the same way as [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills): the [open `skills` CLI](https://github.com/vercel-labs/skills) (`npx skills`, npm package `skills`) clones the repo and wires skills into agents. **Skill bodies** are under repo-root **`skills/`** (symlinks to **`pi-skills/pi-*`**).
+The repo also ships a `.claude-plugin/plugin.json` manifest.
 
 ```bash
-# Install all skills into Pi’s skill dirs (~/.pi/agent/skills/ / .pi/skills/)
-npx skills add <your-github-username>/pi-skill -a pi -y
-
-# List what the CLI sees without installing
-npx skills add <your-github-username>/pi-skill --list
-
-# One skill only (path matches GitHub “tree” URL form)
-npx skills add https://github.com/<you>/pi-skill/tree/main/skills/pi-cli-workspace -a pi -y
+claude --plugin-dir /path/to/pi-agent-skills
 ```
 
-Format reference: [Agent Skills](https://agentskills.io/). The **`skills`** package is what ships to npm; **this** repo is a **skills bundle** (like `agent-skills`), not a second CLI.
+That exposes the skills under the `pi-skill:` namespace, for example:
 
-## Installing in Pi (manual / packages)
+```text
+/pi-skill:pi-cli-workspace
+/pi-skill:pi-extension-authoring
+/pi-skill:pi-ai-library
+```
 
-Symlink or copy skill dirs under `~/.pi/agent/skills/` or use `pi install` with a package that lists these paths in `package.json` `pi.skills` (see `pi-skills/package.json`).
+### Manual Pi Install
 
-**Cursor (optional):** from the repo root, with absolute paths:
+Pi can also load the skills directly from `package.json` `pi.skills`, or from copied / symlinked skill directories under `~/.pi/agent/skills/`.
+
+Optional Cursor symlinks:
 
 ```bash
 SKILLS="$PWD/pi-skills"
@@ -92,3 +85,62 @@ for d in pi-cli-workspace pi-extension-authoring pi-package-authoring pi-ai-libr
   ln -sf "$SKILLS/$d" "$HOME/.cursor/skills/$d"
 done
 ```
+
+## Verify
+
+```bash
+cd pi-skills && npm run verify-skills
+cd pi-skills && npm run ci
+```
+
+`verify-skills` runs the static repo gates: corpus paths, corpus pin, frontmatter, eval shape, pack sync, graded-needle derivation, graded-response checks, trigger-set validation, and more.
+
+`npm run ci` adds the checked-in unit tests and regrades all baselines before running the same verification stack.
+
+When you change eval definitions:
+
+```bash
+cd pi-skills
+npm run sync-evals
+npm run grade-graded-examples
+```
+
+## Local Development
+
+This repo does **not** vendor `pi-mono` in Git. For local development, clone `pi-mono` into `./pi-mono` next to `pi-skills/`.
+
+```bash
+git clone https://github.com/romiluz13/pi-agent-skills.git
+cd pi-agent-skills
+git clone https://github.com/badlogic/pi-mono.git pi-mono
+cd pi-mono && npm install && npm run build && cd ..
+cd pi-skills && npm run verify-skills
+```
+
+When you intentionally move the corpus pin:
+
+```bash
+cd pi-skills
+npm run bump-corpus
+npm run verify-skills
+npm run sync-evals
+```
+
+## Why this repo is useful to developers
+
+This repo is not trying to be a second set of docs for Pi.
+
+It is a developer toolchain for trustworthy answers about Pi:
+
+- package-specific entry points instead of “search the monorepo and hope”
+- skills that can explain behavior from source, docs, and examples together
+- machine-checked evals that keep those skills honest over time
+
+If you already work in Pi, that means less spelunking and fewer wrong answers. If you maintain Pi-related tooling, it means you can reuse the same grounded corpus in Pi, Claude Code, or any workflow that can consume skills.
+
+## Further Reading
+
+- [docs/working-with-pi-mono.md](docs/working-with-pi-mono.md)
+- [pi-skills/README.md](pi-skills/README.md)
+- [pi-skills/docs/skill-creator-workspace.md](pi-skills/docs/skill-creator-workspace.md)
+- [docs/needle-rules.md](docs/needle-rules.md)

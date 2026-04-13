@@ -1,30 +1,64 @@
-# Contributing to pi-skill
+# Contributing
 
-This repository holds **code-grounded Agent Skills** for building with [Pi](https://github.com/badlogic/pi-mono) (vendored **`pi-mono/`** tree) plus validators so models cannot silently invent repository paths that are not on disk.
+This repo packages source-grounded skills for [Pi](https://github.com/badlogic/pi-mono) and the verification rules that keep them honest.
 
-## Before you change anything
+The workflow is simple:
 
-1. Read **`AGENTS.md`** and **`docs/working-with-pi-mono.md`**.
-2. Keep a local **`pi-mono/`** clone at the repo root (same layout CI uses). Shallow checkout at **`.pi-mono-rev`** is enough for gates; full clone if you edit upstream.
-3. From **`pi-skills/`**, run **`npm run ci`** before opening a PR (regrades baselines + all verifiers).
+1. change the skill or eval source
+2. regenerate any derived artifacts
+3. run the repo checks
+
+## Before you start
+
+1. Read `AGENTS.md`.
+2. Read `docs/working-with-pi-mono.md`.
+3. Keep a local `pi-mono/` clone at the repo root. A shallow checkout at `.pi-mono-rev` is enough for most repo gates; use a full clone if you are editing upstream source.
 
 ## Ground rules
 
-- **No invented paths.** Every **`pi-mono/`**-prefixed path string in skills, evals, graded sample answers, and root docs must exist on disk. Verifiers enforce this.
-- **Single source of truth for evals:** **`evals/all-evals.json`**. If you add or change an eval, update **`evals/examples/<id>.eval_metadata.json`**, **`evals/graded-examples/<id>/`**, run **`npm run sync-evals`**, then **`npm run ci`**.
-- **Trigger sets:** each skill in **`package.json` → `pi.skills`** must have **`trigger-evals/<skill-name>.json`** (20 rows: 10 `should_trigger: true`, 10 `false`). No orphan JSON files in **`trigger-evals/`**.
-- **Upstream Pi** (`pi-mono/`) follows **`pi-mono/AGENTS.md`** and **`pi-mono/CONTRIBUTING.md`**. This file is only for the **pi-skill** wrapper repo.
+- No invented `pi-mono/...` paths. Every cited path in skills, evals, graded baselines, and repo docs must exist on disk.
+- `evals/all-evals.json` is the eval source of truth.
+- Every published skill in `pi-skills/package.json` `pi.skills` must have a matching trigger set in `trigger-evals/<skill-name>.json`.
+- If you touch upstream `pi-mono/`, follow `pi-mono/AGENTS.md` and `pi-mono/CONTRIBUTING.md`. This file is only for the skills repo.
 
-## Adding a skill or eval
+## Changing skills
 
-1. Add or edit **`pi-skills/pi-*/SKILL.md`** (and **`references/`** if needed). If you add a **new** skill directory, also add it to **`pi-skills/package.json` → `pi.skills`** and create a matching symlink **`skills/<name>` → `../pi-skills/<name>`** (see **`skills/README.md`**) so **`npx skills add owner/pi-skill`** can discover it. Run **`npm run verify-skills`**.
-2. Add eval rows to **`evals/all-evals.json`**, then **`npm run scaffold-graded-example -- --id <eval_id>`** (or mirror existing graded dirs), write **`with_skill/response.md`**, **`npm run grade-graded-examples`**.
-3. **`npm run sync-evals`** and **`npm run ci`**.
+If you add or update a skill:
 
-## Corpus bump
+1. Edit `pi-skills/pi-*/SKILL.md` and any matching `references/` files.
+2. If it is a new skill, add it to `pi-skills/package.json` `pi.skills`.
+3. Add the matching symlink under `skills/<name>` so `npx skills add ...` can discover it.
+4. Run `cd pi-skills && npm run verify-skills`.
 
-When intentionally moving to a new **`pi-mono`** commit: **`npm run bump-corpus`** from **`pi-skills/`**, then fix any path or allowlist breaks and **`npm run ci`**.
+## Changing evals
+
+If you add or update eval coverage:
+
+1. Edit `pi-skills/evals/all-evals.json`.
+2. Update the matching `pi-skills/evals/examples/<id>.eval_metadata.json`.
+3. Update or scaffold the graded example under `pi-skills/evals/graded-examples/<id>/`.
+4. Run:
+
+```bash
+cd pi-skills
+npm run sync-evals
+npm run grade-graded-examples
+npm run ci
+```
+
+## Corpus pin
+
+When intentionally moving the supported `pi-mono` revision:
+
+```bash
+cd pi-skills
+npm run bump-corpus
+npm run verify-skills
+npm run sync-evals
+```
+
+Then fix any broken paths, allowlist mismatches, or stale graded artifacts before you open a PR.
 
 ## License
 
-By contributing, you agree your contributions are licensed under the MIT license in **`LICENSE`**.
+By contributing, you agree that your contributions are licensed under the MIT license in `LICENSE`.
